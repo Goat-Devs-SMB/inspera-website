@@ -527,6 +527,44 @@
     w.matchMedia('(min-width:900px)').addEventListener('change', e => { if (e.matches) set(false); });
   }
 
+  /* Folded lists (phones). A schedule shows its first rows and a role its first lines; the rest are one tap away.
+     The script only marks the rows and adds the button: the phone style sheet does the hiding, so a wide screen,
+     a print-out and a page without script all show every row. */
+  function initFold() {
+    let n = 0;
+    const fold = (list, keep, what) => {
+      const rows = Array.from(list.children).filter(el => el.tagName === 'LI');
+      if (rows.length < keep + 2) return; // never fold a single row away
+      rows.slice(keep).forEach(li => li.classList.add('fold__more'));
+      if (!list.id) list.id = 'fold-' + (++n);
+      const btn = d.createElement('button');
+      btn.type = 'button'; btn.className = 'fold__btn';
+      btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', list.id);
+      btn.innerHTML = '<span>Show all ' + rows.length + ' ' + what + '</span><i aria-hidden="true"></i>';
+      list.classList.add('fold'); list.insertAdjacentElement('afterend', btn);
+      btn.addEventListener('click', () => {
+        list.classList.add('is-open'); btn.remove();
+        const first = rows[keep]; first.setAttribute('tabindex', '-1'); first.focus({ preventScroll: true });
+        if (ScrollTrigger && mode !== 'still') ScrollTrigger.refresh(); // the page below has moved
+      });
+    };
+    $$('.sheet .sch__list').forEach(l => fold(l, 4, 'items'));
+    $$('.role__list').forEach(l => fold(l, 2, 'lines'));
+  }
+
+  /* Small screens: the walkthrough button joins the bar once the hero's own button has scrolled away, and leaves
+     again at the form. Wide screens always show it; there the attribute changes nothing. */
+  function initBarCta() {
+    const hero = $('.hero__cta .btn'), form = $('#walkthrough');
+    if (!hero || !form || !('IntersectionObserver' in w)) return;
+    const seen = new Map([[hero, true], [form, false]]);
+    const io = new IntersectionObserver(es => {
+      es.forEach(en => seen.set(en.target, en.isIntersecting));
+      if (!seen.get(hero) && !seen.get(form)) root.setAttribute('data-cta', 'on'); else root.removeAttribute('data-cta');
+    });
+    io.observe(hero); io.observe(form);
+  }
+
   const JOURNEY = { st: null, panels: [], go: null };
   function targetY(id) {
     const t = d.getElementById(id); if (!t) return null;
@@ -595,7 +633,7 @@
      ------------------------------------------------------------------------ */
   function initReveals() {
     // nothing is prepared up front: each element is set and released the moment it arrives
-    const ROWS = '.sheet__no,.sheet__t,.sheet__lede,.sch__head,.sch__list li,.dev,.stamp,.fnote';
+    const ROWS = '.sheet__no,.sheet__t,.sheet__lede,.sch__head,.sch__list li,.fold__btn,.dev,.stamp,.fnote';
     const show = el => {
       if (el.classList.contains('is-in')) return;
       if (el.hasAttribute('data-split')) {
@@ -782,7 +820,7 @@
     // the spine fills as the page is read
     const secs = $$('.problem,.journey,.roles,.setup,.close');
     let ticking = false;
-    const upd = () => { ticking = false; const pen = w.innerHeight * 0.62; secs.forEach(sec => { const r = sec.getBoundingClientRect(); sec.style.setProperty('--p', clamp((pen - r.top) / r.height).toFixed(4)); }); trackTheme(); };
+    const upd = () => { ticking = false; const pen = w.innerHeight * 0.62; secs.forEach(sec => { const r = sec.getBoundingClientRect(), v = clamp((pen - r.top) / r.height).toFixed(4); if (sec.__p !== v) { sec.__p = v; sec.style.setProperty('--p', v); } }); trackTheme(); };
     w.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
     upd();
     let rw = w.innerWidth;
@@ -1239,7 +1277,7 @@
     if (mode !== 'still' && !(gsap && ScrollTrigger)) { mode = 'still'; root.setAttribute('data-mode', 'still'); root.classList.remove('anim'); } // the animation library did not arrive: show the finished page
     clearTimeout(w.__failsafe);
     themeEls = themed(); navLinks = $$('.nav__links a');
-    initMenu(); initAnchors(); initForm(); initViewer();
+    initMenu(); initAnchors(); initForm(); initViewer(); initFold(); initBarCta();
     PLATE.fit(); let pf; w.addEventListener('resize', () => { cancelAnimationFrame(pf); pf = requestAnimationFrame(PLATE.fit); });
     const go = async () => {
       try {
