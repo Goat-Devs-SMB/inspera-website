@@ -483,6 +483,8 @@ html:not([data-mode="cinema"]) .close__mark{margin-left:calc(var(--spine-x) - va
 .foot__logo{display:block;height:28px;width:auto}
 .foot__p{font-size:.86rem;color:#B5ADCC;max-width:44em;line-height:1.5}
 .foot__status{font-family:var(--mono);font-size:.72rem;letter-spacing:.03em}
+.foot__p a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+.foot__p a:hover{color:#fff}
 
 /* ==========================================================================
    Wider stacked layout (still mode on a desktop, tablets)
@@ -715,9 +717,8 @@ html[data-mode="cinema"] .foot{--bg:var(--purple);height:104px;padding:0;border-
 html[data-mode="cinema"] .foot .wrap{padding-left:calc(var(--gutter) + 9vw);display:grid;grid-template-columns:1fr auto;align-content:center;gap:1px 28px;height:56px}
 html[data-mode="cinema"] .foot__p{color:#DDD5F0;font-size:.74rem;max-width:none;white-space:nowrap}
 html[data-mode="cinema"] .foot__status{font-size:.62rem;grid-column:1;grid-row:2}
-html[data-mode="cinema"] .foot__c{grid-column:2;grid-row:1/span 3;align-self:center}
-html[data-mode="cinema"] .foot .wrap{height:72px}
-html[data-mode="cinema"] .foot__tm{grid-row:3;opacity:.82}
+html[data-mode="cinema"] .foot__c{grid-column:2;grid-row:1/span 2;align-self:center}
+html[data-mode="cinema"] .foot__tm{grid-row:2;opacity:.82}
 html[data-mode="cinema"] .foot__brand{display:none}
 
 html.lenis,html.lenis body{height:auto}
