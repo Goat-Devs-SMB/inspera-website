@@ -1,0 +1,15 @@
+Fonts in this folder are redistributed unmodified (latin subsets, WOFF2) under their open licences.
+
+DM Serif Display (regular, italic)
+  Copyright 2014-2018 Adobe (http://www.adobe.com/), 2019 Google LLC, with Colophon Foundry.
+  SIL Open Font License 1.1 — https://openfontlicense.org
+
+Roboto (variable, weights 100-900)
+  Copyright 2011 The Roboto Project Authors (https://github.com/googlefonts/roboto-3-classic).
+  SIL Open Font License 1.1 — https://openfontlicense.org
+
+IBM Plex Mono (400, 500)
+  Copyright 2017 IBM Corp. "Plex" is a trademark of IBM Corp.
+  SIL Open Font License 1.1 — https://openfontlicense.org
+
+Source of the files: Google Fonts (fonts.google.com), fetched 19 November 2026.

@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="en-IN" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inspera — the operating system for architecture and interior-design studios</title>
+<meta name="description" content="Inspera runs an architecture or interior-design studio on one platform: contracts and fees, the planner, timesheets, attendance and leave, invoicing with GST, payroll, hiring and dashboards.">
+<meta name="theme-color" content="#F6F3F8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'sha256-Q+Wb2ibISw7PXurcgVd+KvUj8XWet71f4ATkdTUZpfk='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
+
+<!-- Share cards. og:url and og:image are absolute: change the base when the custom domain is connected. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inspera">
+<meta property="og:title" content="Inspera — the pen never lifts">
+<meta property="og:description" content="The operating system for architecture and interior-design studios. One continuous line from the first brief to the last receipt.">
+<meta property="og:url" content="https://inspera.live/">
+<meta property="og:image" content="https://inspera.live/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Inspera mark and the line: The pen never lifts.">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inspera — the pen never lifts">
+<meta name="twitter:description" content="The operating system for architecture and interior-design studios. One continuous line from the first brief to the last receipt.">
+<meta name="twitter:image" content="https://inspera.live/assets/og.png">
+
+<link rel="icon" href="assets/logo/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/logo/inspera-favicon.svg">
+<link rel="apple-touch-icon" href="assets/logo/inspera-app-icon-180.png">
+
+<link rel="preload" href="assets/fonts/dm-serif-display-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/roboto-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/dm-serif-display-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+
+<script>/*boot*/(function(){var d=document.documentElement,w=window,q=function(s){return w.matchMedia&&w.matchMedia(s).matches};d.classList.remove('no-js');d.classList.add('js');var p=/[?&]mode=(still|flow|cinema)/.exec(location.search),W=w.innerWidth,H=w.innerHeight,a=W/H,still=q('(prefers-reduced-motion: reduce)'),wide=W>=1100&&H>=720&&a>=1.25,m=p?p[1]:still?'still':wide?'cinema':'flow',c=function(v,lo,hi){return Math.max(lo,Math.min(hi,v))},tx=c(1+(a-1.6)*.4,1,1.18),s=d.style;d.setAttribute('data-mode',m);s.setProperty('--k',c(Math.min(W/1440,(H-136)/764),.6,1.5).toFixed(4));s.setProperty('--tx',tx.toFixed(3));s.setProperty('--tc',(33+(tx-1)*72).toFixed(2)+'em');if(m!=='still'){d.classList.add('anim');w.__failsafe=setTimeout(function(){d.classList.remove('anim');d.setAttribute('data-mode','still')},6000)}if(m==='cinema'&&q('(hover:hover) and (pointer:fine)')){var l=document.createElement('link');l.rel='preconnect';l.href='https://cdn.jsdelivr.net';l.crossOrigin='anonymous';document.head.appendChild(l)}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs><pattern id="kp-hatch" width=".8" height=".8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width=".8" height=".8" fill="#E9E3F3"/><rect width=".16" height=".8" fill="#7D6BB4"/></pattern></defs>
+  <symbol id="mk" viewBox="0 0 110 100"><path d="M 23.5,32.5 L 23.5,78 A 10.5 10.5 0 0 0 44.5,78 L 44.5,53.5 A 21 21 0 0 1 86.5,53.5 L 86.5,88.5" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23.5" cy="15" r="7" fill="currentColor"/></symbol>
+  <symbol id="mks" viewBox="0 0 110 100"><path d="M 23.5,34.75 L 23.5,80.25 A 10.5 10.5 0 0 0 44.5,80.25 L 44.5,55.75 A 21 21 0 0 1 86.5,55.75 L 86.5,90.75" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23.5" cy="12.75" r="8.5" fill="currentColor"/></symbol>
+  <!-- the logo (final, 20 Nov 2026): one word, the mark as its first two letters. In two parts, so the "in" can carry its own colour.
+       Geometry from ../logo/v2/build_logo.py (logo); the word is outlined, not typed -->
+  <g id="lgi"><path d="M 23.5,34.75 L 23.5,80.25 A 10.5 10.5 0 0 0 44.5,80.25 L 44.5,55.75 A 21 21 0 0 1 86.5,55.75 L 86.5,90.75" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23.5" cy="12.75" r="8.5" fill="currentColor"/></g>
+  <g id="lgw"><path transform="translate(93.954 93.813) scale(0.12916 -0.12916)" d="M193 -15Q144 -15 105.0 -3.5Q66 8 33 25L34 144H44L78 84Q100 44 126.5 24.5Q153 5 194 5Q242 5 271.5 26.5Q301 48 301 84Q301 117 280.0 138.0Q259 159 202 176L160 189Q99 207 64.0 245.0Q29 283 29 338Q29 404 81.0 450.0Q133 496 230 496Q269 496 303.5 487.5Q338 479 370 462L364 354H354L319 416Q300 449 281.5 462.5Q263 476 226 476Q192 476 162.0 457.0Q132 438 132 403Q132 369 157.5 349.0Q183 329 233 312L278 299Q350 277 381.0 238.5Q412 200 412 146Q412 73 354.5 29.0Q297 -15 193 -15Z M446 -230V-220L458 -216Q495 -206 495 -168V376Q495 398 487.5 409.0Q480 420 460 424L446 427V437L616 495L626 485L635 454Q668 474 708.5 485.0Q749 496 792 496Q878 496 928.5 430.5Q979 365 979 243Q979 123 923.5 54.0Q868 -15 767 -15Q688 -15 634 8V-165Q634 -205 670 -215L689 -220V-230ZM719 14Q769 14 798.5 66.0Q828 118 828 239Q828 360 800.0 408.5Q772 457 719 457Q682 457 637 433V30Q675 14 719 14Z M1281 496Q1346 496 1392.0 469.5Q1438 443 1462.5 397.5Q1487 352 1487 294Q1487 283 1486.0 271.5Q1485 260 1482 251H1184Q1185 143 1222.5 95.5Q1260 48 1334 48Q1384 48 1415.0 64.0Q1446 80 1473 111L1483 102Q1452 47 1400.5 16.0Q1349 -15 1277 -15Q1206 -15 1151.0 15.5Q1096 46 1065.0 103.0Q1034 160 1034 239Q1034 321 1070.0 378.5Q1106 436 1162.5 466.0Q1219 496 1281 496ZM1278 476Q1249 476 1228.5 458.5Q1208 441 1196.5 396.5Q1185 352 1184 271H1355Q1365 380 1347.0 428.0Q1329 476 1278 476Z M1537 0V10L1552 14Q1572 20 1579.5 32.0Q1587 44 1587 63V376Q1587 398 1579.5 408.5Q1572 419 1552 423L1537 427V437L1709 495L1719 485L1728 399V391Q1742 419 1764.5 442.5Q1787 466 1814.5 481.0Q1842 496 1869 496Q1907 496 1927.0 475.0Q1947 454 1947 422Q1947 388 1927.5 369.5Q1908 351 1881 351Q1839 351 1807 393L1805 395Q1795 409 1782.0 410.5Q1769 412 1758 398Q1748 389 1741.5 376.5Q1735 364 1729 348V69Q1729 29 1764 19L1796 10V0Z M2103 -15Q2045 -15 2005.5 18.0Q1966 51 1966 113Q1966 160 2014.0 199.5Q2062 239 2165 259Q2181 262 2201.0 265.5Q2221 269 2243 273V352Q2243 420 2226.5 447.5Q2210 475 2175 475Q2151 475 2137.0 459.5Q2123 444 2119 406L2117 395Q2115 352 2096.0 332.0Q2077 312 2049 312Q2023 312 2006.0 328.0Q1989 344 1989 371Q1989 412 2017.5 440.0Q2046 468 2093.0 482.0Q2140 496 2195 496Q2284 496 2332.5 452.5Q2381 409 2381 311V90Q2381 45 2423 45H2445L2454 37Q2435 13 2412.5 0.0Q2390 -13 2349 -13Q2305 -13 2279.5 7.5Q2254 28 2246 62Q2216 30 2184.5 7.5Q2153 -15 2103 -15ZM2164 46Q2184 46 2201.5 55.5Q2219 65 2243 85V253Q2233 251 2223.0 249.0Q2213 247 2200 245Q2154 233 2126.5 204.5Q2099 176 2099 128Q2099 87 2118.0 66.5Q2137 46 2164 46Z" fill="currentColor"/></g>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Inspera, back to the top">
+    <svg class="nav__logo" viewBox="13 2.25 400.038 123.269" aria-hidden="true" focusable="false"><use class="lg-in" href="#lgi"/><use href="#lgw"/></svg>
+  </a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#problem">The problem</a>
+    <a href="#journey">The journey</a>
+    <a href="#roles">Roles</a>
+    <a href="#setup">Set-up</a>
+  </nav>
+  <a class="btn btn--sm nav__cta" href="#walkthrough" data-magnetic>Request a walkthrough</a>
+  <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="sr-only">Menu</span><i aria-hidden="true"></i></button>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Menu">
+    <a href="#problem"><span>01</span>The problem</a>
+    <a href="#journey"><span>02</span>The journey</a>
+    <a href="#roles"><span>03</span>Roles</a>
+    <a href="#setup"><span>04</span>Set-up</a>
+    <a href="#walkthrough"><span>05</span>Request a walkthrough</a>
+  </nav>
+</div>
+
+<div class="hud" aria-hidden="true">
+  <i class="hud__frame"></i>
+  <div class="hud__l"><span class="hud__xy">X 0000 · Y 0000</span><span class="hud__len">LINE 0000.0 m</span></div>
+  <div class="hud__index"></div>
+  <div class="hud__tb"><span>Inspera</span><span class="hud__sheet">Sheet 00</span><span class="hud__title">Cover</span></div>
+</div>
+<div class="pen" aria-hidden="true"></div>
+<div class="xhair" aria-hidden="true"><i></i><i></i></div>
+
+<main id="main">
+
+<!-- ═════════════════════════ 00 · COVER ═════════════════════════ -->
+<section class="hero" id="top" data-theme="paper" data-sheet="Sheet 00" data-title="Cover" aria-labelledby="hero-h">
+  <div class="hero__pin">
+    <div class="hero__fig" role="img" aria-label="A line drawing made with one continuous line: it traces a site boundary, then the floor plan of a studio with six rooms, which rises into a building.">
+      <svg class="hero__svg" aria-hidden="true" focusable="false"></svg>
+      <noscript><img class="hero__static" src="assets/hero-static.svg" alt="" width="573" height="551"></noscript>
+    </div>
+
+    <div class="hero__copy">
+      <p class="kicker hero__kicker">Inspera <span class="sep">·</span> the operating system for architecture and interior-design studios</p>
+      <h1 id="hero-h" class="display hero__h" aria-label="The pen never lifts."><span class="hl" aria-hidden="true"><span>The pen</span></span><span class="hl" aria-hidden="true"><span><em>never</em></span></span><span class="hl" aria-hidden="true"><span>lifts<span class="origin">.</span></span></span></h1>
+      <p class="hero__sub">From the first brief to the last receipt, a project is one continuous line. Inspera keeps it unbroken: contracts and fees, design stages, the studio&rsquo;s week, site, invoices, people, and the numbers that tell you how the practice is doing.</p>
+      <div class="hero__cta">
+        <a class="btn" href="#walkthrough" data-magnetic>Request a walkthrough</a>
+        <a class="lnk" href="#journey">Follow the line <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+
+    <ol class="hero__phases" aria-hidden="true">
+      <li data-phase="1"><b>01 Site</b> Every project starts as a boundary and a brief.</li>
+      <li data-phase="2"><b>02 Plan</b> One stroke, six rooms, doors included.</li>
+      <li data-phase="3"><b>03 Volume</b> Your studio, under one roof.</li>
+    </ol>
+
+    <ul class="rooms" aria-label="The six rooms of the plan: what Inspera holds">
+      <!-- claims:hero.rooms -->
+      <li data-claim="RM-1" data-status="live" data-room="projects"><span class="rooms__n" aria-hidden="true">1</span><span class="rooms__t">Projects &amp; planner</span><span class="rooms__d">Milestones, deliverables, tasks and sub-tasks, planned against the contract.</span><span class="tag tag--live">Live</span></li>
+      <li data-claim="RM-2" data-status="live" data-room="contracts"><span class="rooms__n" aria-hidden="true">2</span><span class="rooms__t">Contracts &amp; fees</span><span class="rooms__d">A fee against every milestone; billed and collected stage by stage.</span><span class="tag tag--live">Live</span></li>
+      <li data-claim="RM-3" data-status="live" data-room="time"><span class="rooms__n" aria-hidden="true">3</span><span class="rooms__t">Time &amp; attendance</span><span class="rooms__d">Weekly timesheets, the attendance calendar, leave and requests.</span><span class="tag tag--live">Live</span></li>
+      <li data-claim="RM-4" data-status="live" data-room="people"><span class="rooms__n" aria-hidden="true">4</span><span class="rooms__t">People &amp; payroll</span><span class="rooms__d">Hiring, employee records, salary structures and salary slips.</span><span class="tag tag--live">Live</span></li>
+      <li data-claim="RM-5" data-status="live" data-room="accounts"><span class="rooms__n" aria-hidden="true">5</span><span class="rooms__t">Accounts &amp; GST</span><span class="rooms__d">Invoices, receipts, purchases, journals and GST-ready books.</span><span class="tag tag--live">Live</span></li>
+      <li data-claim="RM-6" data-status="live" data-room="insight"><span class="rooms__n" aria-hidden="true">6</span><span class="rooms__t">Dashboards &amp; reports</span><span class="rooms__d">The practice, read from live records.</span><span class="tag tag--live">Live</span></li>
+      <!-- /claims:hero.rooms -->
+    </ul>
+
+    <p class="hero__cue" aria-hidden="true"><i></i>Scroll to draw</p>
+  </div>
+</section>
+
+<!-- ═════════════════════════ 01 · EXISTING CONDITIONS ═════════════════════════ -->
+<section class="problem" id="problem" data-theme="paper" data-sheet="Sheet 01" data-title="Existing conditions" aria-labelledby="problem-h">
+  <svg class="route" aria-hidden="true" focusable="false"></svg>
+  <div class="wrap">
+    <p class="kicker" data-reveal><span class="kicker__no">Sheet 01</span>Existing conditions</p>
+    <h2 id="problem-h" class="display problem__h" data-split>Most studios run on WhatsApp, Excel and <span class="cloud" data-cloud>somebody&rsquo;s memory.</span></h2>
+    <p class="redline problem__rfi" data-reveal aria-hidden="true">RFI 01 · Who covers when they are on leave?</p>
+    <p class="problem__intro" data-reveal>The work is beautiful. The system behind it is a group chat, a fee tracker in its seventh version, and one person who remembers everything.</p>
+
+    <ol class="survey">
+      <li class="survey__item" data-reveal>
+        <span class="bubble" data-anchor="s1" aria-hidden="true">1</span>
+        <div class="survey__text">
+          <h3>Fees leak between the drawing board and the invoice.</h3>
+          <p>A stage is finished. The client approves it on a call. Accounts hears about it weeks later, if at all. The work was done; the invoice was not raised.</p>
+        </div>
+        <svg class="survey__fig" viewBox="0 0 280 130" aria-hidden="true" focusable="false">
+          <g class="g">
+            <path d="M10,22H60A2,2 0 0 1 62,24V44A2,2 0 0 1 60,46H10A2,2 0 0 1 8,44V24A2,2 0 0 1 10,22Z" pathLength="1"/><path d="M26,34l6,6 11-12" pathLength="1"/>
+            <path d="M78,22H128A2,2 0 0 1 130,24V44A2,2 0 0 1 128,46H78A2,2 0 0 1 76,44V24A2,2 0 0 1 78,22Z" pathLength="1"/><path d="M94,34l6,6 11-12" pathLength="1"/>
+            <path d="M146,22H196A2,2 0 0 1 198,24V44A2,2 0 0 1 196,46H146A2,2 0 0 1 144,44V24A2,2 0 0 1 146,22Z" pathLength="1"/><path d="M162,34l6,6 11-12" pathLength="1"/>
+            <rect class="dash" x="212" y="22" width="54" height="24" rx="2"/>
+            <path d="M35,46V72M103,46V72" pathLength="1"/>
+            <path d="M19,72H51A1,1 0 0 1 52,73V115A1,1 0 0 1 51,116H19A1,1 0 0 1 18,115V73A1,1 0 0 1 19,72Z" pathLength="1"/><path d="M24,82h22M24,90h22M24,98h13" pathLength="1"/>
+            <path d="M87,72H119A1,1 0 0 1 120,73V115A1,1 0 0 1 119,116H87A1,1 0 0 1 86,115V73A1,1 0 0 1 87,72Z" pathLength="1"/><path d="M92,82h22M92,90h22M92,98h13" pathLength="1"/>
+          </g>
+          <g class="r">
+            <path class="dash" d="M171,46V72"/>
+            <rect class="dash" x="154" y="72" width="34" height="44" rx="1"/>
+            <text x="171" y="100" text-anchor="middle" class="q">?</text>
+            <path d="M194,94h14" pathLength="1"/>
+            <text x="212" y="91">DONE.</text><text x="212" y="103">NOT INVOICED.</text>
+          </g>
+          <g class="t"><text x="8" y="14">STAGE 1</text><text x="76" y="14">STAGE 2</text><text x="144" y="14">STAGE 3</text><text x="212" y="14">STAGE 4</text></g>
+        </svg>
+      </li>
+      <li class="survey__item" data-reveal>
+        <span class="bubble" data-anchor="s2" aria-hidden="true">2</span>
+        <div class="survey__text">
+          <h3>Nobody can see the studio&rsquo;s real week.</h3>
+          <p>Who is on which project. How many hours a stage has already taken. Who is on leave on Thursday. The answers exist, in three sheets and two chats that do not agree.</p>
+        </div>
+        <svg class="survey__fig" viewBox="0 0 280 130" aria-hidden="true" focusable="false">
+          <g class="g" transform="rotate(-4 50 66)">
+            <path d="M12,24H86A2,2 0 0 1 88,26V106A2,2 0 0 1 86,108H12A2,2 0 0 1 10,106V26A2,2 0 0 1 12,24Z" pathLength="1"/><path d="M10,41h78M10,58h78M10,75h78M10,92h78M36,24v84M62,24v84" pathLength="1"/>
+            <rect class="f" x="36" y="41" width="26" height="17"/><rect class="f" x="62" y="75" width="26" height="17"/><rect class="f" x="10" y="92" width="26" height="16"/>
+          </g>
+          <g class="g" transform="rotate(3 142 66)">
+            <path d="M105,24H179A2,2 0 0 1 181,26V106A2,2 0 0 1 179,108H105A2,2 0 0 1 103,106V26A2,2 0 0 1 105,24Z" pathLength="1"/><path d="M103,41h78M103,58h78M103,75h78M103,92h78M129,24v84M155,24v84" pathLength="1"/>
+            <rect class="f" x="103" y="41" width="26" height="17"/><rect class="f" x="155" y="58" width="26" height="17"/><rect class="f" x="129" y="92" width="26" height="16"/>
+          </g>
+          <g class="g">
+            <path d="M210,28H248A10,10 0 0 1 258,38V38A10,10 0 0 1 248,48H210A10,10 0 0 1 200,38V38A10,10 0 0 1 210,28Z" pathLength="1"/><path d="M224,56H262A10,10 0 0 1 272,66V66A10,10 0 0 1 262,76H224A10,10 0 0 1 214,66V66A10,10 0 0 1 224,56Z" pathLength="1"/><path d="M210,84H236A10,10 0 0 1 246,94V94A10,10 0 0 1 236,104H210A10,10 0 0 1 200,94V94A10,10 0 0 1 210,84Z" pathLength="1"/>
+            <path d="M210,38h34M224,66h36M210,94h22" pathLength="1"/>
+          </g>
+          <g class="r"><text x="95" y="72" text-anchor="middle" class="q">≠</text><text x="190" y="72" text-anchor="middle" class="q">≠</text></g>
+          <g class="t"><text x="10" y="14">SHEET A</text><text x="103" y="14">SHEET B</text><text x="200" y="14">THE CHAT</text></g>
+        </svg>
+      </li>
+      <li class="survey__item" data-reveal>
+        <span class="bubble" data-anchor="s3" aria-hidden="true">3</span>
+        <div class="survey__text">
+          <h3>The system is a person.</h3>
+          <p>Every fee, every revision, every promise made to a client lives in one senior&rsquo;s head. The day they are on site, the studio runs on guesswork.</p>
+        </div>
+        <svg class="survey__fig" viewBox="0 0 280 130" aria-hidden="true" focusable="false">
+          <g class="g">
+            <path class="dash" d="M140,66L44,26M140,66L96,18M140,66L184,18M140,66L236,26M140,66L246,82M140,66L196,114M140,66L84,114M140,66L34,82"/>
+            <path d="M31,16H49A1,1 0 0 1 50,17V31A1,1 0 0 1 49,32H31A1,1 0 0 1 30,31V17A1,1 0 0 1 31,16Z" pathLength="1"/><path d="M87,8H105A1,1 0 0 1 106,9V23A1,1 0 0 1 105,24H87A1,1 0 0 1 86,23V9A1,1 0 0 1 87,8Z" pathLength="1"/><path d="M175,8H193A1,1 0 0 1 194,9V23A1,1 0 0 1 193,24H175A1,1 0 0 1 174,23V9A1,1 0 0 1 175,8Z" pathLength="1"/><path d="M231,16H249A1,1 0 0 1 250,17V31A1,1 0 0 1 249,32H231A1,1 0 0 1 230,31V17A1,1 0 0 1 231,16Z" pathLength="1"/>
+            <path d="M241,74H259A1,1 0 0 1 260,75V89A1,1 0 0 1 259,90H241A1,1 0 0 1 240,89V75A1,1 0 0 1 241,74Z" pathLength="1"/><path d="M189,106H207A1,1 0 0 1 208,107V121A1,1 0 0 1 207,122H189A1,1 0 0 1 188,121V107A1,1 0 0 1 189,106Z" pathLength="1"/><path d="M75,106H93A1,1 0 0 1 94,107V121A1,1 0 0 1 93,122H75A1,1 0 0 1 74,121V107A1,1 0 0 1 75,106Z" pathLength="1"/><path d="M21,74H39A1,1 0 0 1 40,75V89A1,1 0 0 1 39,90H21A1,1 0 0 1 20,89V75A1,1 0 0 1 21,74Z" pathLength="1"/>
+          </g>
+          <g class="r">
+            <circle class="dash fillp" cx="140" cy="66" r="25"/>
+            <text x="140" y="63" text-anchor="middle">ON</text><text x="140" y="75" text-anchor="middle">LEAVE</text>
+          </g>
+        </svg>
+      </li>
+    </ol>
+
+    <p class="display problem__close" data-split>None of this is a talent problem. It is <span class="broken" data-anchor="broken">a broken line.</span></p>
+    <p class="problem__turn" data-reveal><span data-anchor="turn">So we drew it as one.</span></p>
+  </div>
+</section>
+
+<!-- ═════════════════════════ A-00 … A-07 · THE DRAWING SET ═════════════════════════ -->
+<section class="journey" id="journey" data-theme="lav" data-sheet="Sheets A-01–A-07" data-title="The drawing set" aria-labelledby="journey-h">
+  <div class="journey__view">
+    <div class="journey__track">
+      <svg class="route route--track" aria-hidden="true" focusable="false"></svg>
+
+      <!-- A-00 cover -->
+      <div class="panel panel--cover" id="a00" data-sheet="Sheet A-00" data-title="Drawing list">
+        <div class="cover">
+          <p class="kicker" data-reveal><span class="kicker__no">Sheets A-01 to A-07</span>The drawing set</p>
+          <h2 id="journey-h" class="display cover__h" data-split>The life of a project, in one line.</h2>
+          <p class="cover__intro" data-reveal>Seven sheets. Each is a part of Inspera you can use today. What we are still building is drawn dashed, and said so.</p>
+          <div class="cover__cols">
+            <nav class="dlist" aria-label="Drawing list" data-reveal>
+              <ol>
+                <li><a href="#a01"><span>A-01</span><b>Brief &amp; contract</b></a></li>
+                <li><a href="#a02"><span>A-02</span><b>Design stages &amp; deliverables</b></a></li>
+                <li><a href="#a03"><span>A-03</span><b>The studio&rsquo;s week</b></a></li>
+                <li><a href="#a04"><span>A-04</span><b>Site</b></a></li>
+                <li><a href="#a05"><span>A-05</span><b>Money</b></a></li>
+                <li><a href="#a06"><span>A-06</span><b>People</b></a></li>
+                <li><a href="#a07"><span>A-07</span><b>Insight</b></a></li>
+              </ol>
+            </nav>
+            <div class="legend" data-reveal>
+              <p class="legend__h">Legend</p>
+              <dl>
+                <div><dt><i class="lg lg--live" aria-hidden="true"></i>Solid line</dt><dd><span class="tag tag--live">Live</span> In the product today.</dd></div>
+                <div><dt><i class="lg lg--dev" aria-hidden="true"></i>Dashed line</dt><dd><span class="tag tag--dev">In development</span> On the drawing board. Not in the product yet.</dd></div>
+                <div><dt><span class="lgt lgt--app" aria-hidden="true">App</span>On a screen</dt><dd>The App: where the studio works every day.</dd></div>
+                <div><dt><span class="lgt lgt--desk" aria-hidden="true">Desk</span>On a screen</dt><dd>The Desk: accounts, HR and administration. It is ERPNext.</dd></div>
+              </dl>
+              <p class="legend__note">The screens are Inspera&rsquo;s own, shown with demo data: every name and figure in them is made up. Select a screen to see it larger.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A-01 -->
+      <article class="panel sheet" id="a01" data-sheet="Sheet A-01" data-title="Brief &amp; contract" aria-labelledby="a01-t">
+        <div class="sheet__in">
+          <p class="stamp" aria-hidden="true"><span>A-01</span><span>Brief &amp; contract</span><span class="stamp__s">Live</span><span>Demo data</span></p>
+          <div class="sheet__text">
+            <p class="sheet__no" aria-hidden="true" data-n="01"></p>
+            <h3 id="a01-t" class="display sheet__t">Brief &amp; contract</h3>
+            <p class="sheet__lede">Every job starts as a contract, its fee already split into stages. The project is created from it, so plan and invoices cannot drift apart.</p>
+            <div class="sch">
+              <p class="sch__head" aria-hidden="true"><span>Ref</span><span>Item</span><span>Status</span></p>
+              <ol class="sch__list" aria-label="Schedule A-01: what the contract does, with status">
+                <!-- claims:a01.schedule -->
+                <li data-claim="C-01" data-status="live"><span class="sch__ref">C-01</span><span class="sch__item">One contract per job: customer, Delivery or Retainer, service category, typology, square feet, project value and period.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-02" data-status="live"><span class="sch__ref">C-02</span><span class="sch__item">A milestone schedule with a fee against every stage. Enter the fee % or the amount; the other is worked out.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-03" data-status="live"><span class="sch__ref">C-03</span><span class="sch__item">Milestone fees cannot add up to more than the project value, beyond a tolerance your firm sets.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-04" data-status="live"><span class="sch__ref">C-04</span><span class="sch__item">Contract templates by type of job: milestones with fee %, the deliverables under each, the tasks under each deliverable.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-05" data-status="live"><span class="sch__ref">C-05</span><span class="sch__item">The project is created from the contract in one step; its planner opens with the template&rsquo;s stages and tasks.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-06" data-status="live"><span class="sch__ref">C-06</span><span class="sch__item">Automatic contract numbers: financial year / running number / customer code.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-07" data-status="live"><span class="sch__ref">C-07</span><span class="sch__item">Invoices raised before Inspera are entered on the contract, so a part-billed job keeps its history.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-08" data-status="live"><span class="sch__ref">C-08</span><span class="sch__item">Variable payouts: who shares a variable on the contract, by category and %; each invoice lists the amount per person.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-09" data-status="live"><span class="sch__ref">C-09</span><span class="sch__item">The signed contract PDF, the terms from a terms template and a fulfilment checklist sit on the contract.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="C-10" data-status="live"><span class="sch__ref">C-10</span><span class="sch__item">CRM, where your firm uses it: leads with land, built-up and carpet area, design style and budget; a won deal opens a pre-filled contract.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <!-- /claims:a01.schedule -->
+              </ol>
+            </div>
+          </div>
+          <figure class="sheet__fig">
+            <div class="vg vg--contract" data-illustrates="C-01 C-06 P-06 P-07">
+             <div class="shot shot--a01" data-n="2">
+             <figure class="scr scr--a scr--app" data-area="App" data-title="Project overview" style="--ar:1.7778">
+              <a class="scr__open" href="assets/screens/a01-overview-large.webp" data-large="assets/screens/a01-overview-large.webp" data-vw="1440" aria-label="Project overview, App. Open the screen larger."><img src="assets/screens/a01-overview.webp" width="1600" height="900" alt="The Overview of a project in Inspera: its five milestones with their service category, completion and contract, planned and actual end dates; the client; budgeted hours by designation against hours used; areas by floor; and the team." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Project overview</span></figcaption>
+             </figure>
+             <figure class="scr scr--b scr--desk" data-area="Desk" data-title="Contract" style="--ar:1.0381">
+              <a class="scr__open" href="assets/screens/a01-contract-large.webp" data-large="assets/screens/a01-contract-large.webp" data-vw="1100" aria-label="Contract, Desk. Open the screen larger."><img src="assets/screens/a01-contract.webp" width="1200" height="1156" alt="The contract form in the Desk: customer, status, square feet, category, classification and typology on the left; company, project value, contract type, template, the signed contract PDF, completion and contract lead on the right; then the contract period." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">Desk</span><span>Contract</span></figcaption>
+             </figure>
+             </div>
+             <div class="sign">
+             <svg class="gline gline--sign" viewBox="0 0 240 64" data-in="0,48" data-out="240,48" aria-hidden="true" focusable="false"><path class="gl" d="M0,48 L52,48 C66,48 70,18 82,16 C96,14 88,52 102,48 C112,45 108,24 120,22 C133,20 126,52 140,48 C150,45 150,32 162,28 C176,24 178,46 166,49 C154,52 150,38 164,34 C184,28 200,48 240,48"/></svg>
+             <span class="sign__t">Signed · contract PDF attached</span>
+             </div>
+            </div>
+            <figcaption class="fnote">Type a fee % and the amount is worked out. The schedule cannot exceed the project value beyond the tolerance you set.</figcaption>
+          </figure>
+          <div class="ground" aria-hidden="true"><span class="bubble">1</span><span class="ground__ch">CH 1+000 · Brief &amp; contract</span></div>
+        </div>
+      </article>
+
+      <!-- A-02 -->
+      <article class="panel sheet" id="a02" data-sheet="Sheet A-02" data-title="Design stages &amp; deliverables" aria-labelledby="a02-t">
+        <div class="sheet__in">
+          <p class="stamp" aria-hidden="true"><span>A-02</span><span>Design stages &amp; deliverables</span><span class="stamp__s">Live</span><span>Demo data</span></p>
+          <div class="sheet__text">
+            <p class="sheet__no" aria-hidden="true" data-n="02"></p>
+            <h3 id="a02-t" class="display sheet__t">Design stages &amp; deliverables</h3>
+            <p class="sheet__lede">The contract&rsquo;s milestones become the planner. Nobody types in a percentage: progress rolls up from finished tasks.</p>
+            <div class="sch">
+              <p class="sch__head" aria-hidden="true"><span>Ref</span><span>Item</span><span>Status</span></p>
+              <ol class="sch__list" aria-label="Schedule A-02: what the planner does, with status">
+                <!-- claims:a02.schedule -->
+                <li data-claim="P-01" data-status="live"><span class="sch__ref">P-01</span><span class="sch__item">A planner in four levels: milestone → deliverable → task → sub-task. The milestones come from the contract.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="P-02" data-status="live"><span class="sch__ref">P-02</span><span class="sch__item">Every task has owners, a status (To Do, In Progress, On Hold, Done), planned and actual dates, and remarks.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="P-03" data-status="live"><span class="sch__ref">P-03</span><span class="sch__item">Progress rolls up by itself: a task counts only when Done; deliverables average their tasks; milestones weight their deliverables; the project weights its milestones by fee.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="P-04" data-status="live"><span class="sch__ref">P-04</span><span class="sch__item">Deliverable weightage: how much each deliverable counts towards its milestone. The weights must total 100.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="P-05" data-status="live"><span class="sch__ref">P-05</span><span class="sch__item">Drag to reorder; duplicate or move a deliverable with its tasks; select several tasks to duplicate, move or delete.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="P-06" data-status="live"><span class="sch__ref">P-06</span><span class="sch__item">Project overview: milestones with contract, planned and actual end dates; areas by floor and size; the team by designation.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="P-07" data-status="live"><span class="sch__ref">P-07</span><span class="sch__item">Budgeted hours by designation, against the hours used from approved timesheets.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="P-08" data-status="live"><span class="sch__ref">P-08</span><span class="sch__item">One task list across every project (Past Due, This Week, Due Later, No Due Date), plus internal and personal tasks.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="P-09" data-status="live"><span class="sch__ref">P-09</span><span class="sch__item">A daily email of each person&rsquo;s open and overdue tasks, where your firm switches it on.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <!-- /claims:a02.schedule -->
+              </ol>
+            </div>
+          </div>
+          <figure class="sheet__fig">
+            <div class="vg vg--planner" data-illustrates="P-01 P-02 P-03 P-08">
+             <div class="shot shot--a02" data-n="2">
+             <figure class="scr scr--a scr--app" data-area="App" data-title="Planner" style="--ar:1.7778">
+              <a class="scr__open" href="assets/screens/a02-planner-large.webp" data-large="assets/screens/a02-planner-large.webp" data-vw="1440" aria-label="Planner, App. Open the screen larger."><img src="assets/screens/a02-planner.webp" width="1600" height="900" alt="The Planner of a project in Inspera: the milestones across the top and, under one of them, its deliverables, tasks and sub-tasks with owners, status and planned dates." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Planner</span></figcaption>
+             </figure>
+             <figure class="scr scr--b scr--app" data-area="App" data-title="Tasks" style="--ar:1.7789">
+              <a class="scr__open" href="assets/screens/a02-tasks-large.webp" data-large="assets/screens/a02-tasks-large.webp" data-vw="1396" aria-label="Tasks, App. Open the screen larger."><img src="assets/screens/a02-tasks.webp" width="1400" height="787" alt="The task list in Inspera: one person&rsquo;s tasks across every project, grouped as Past Due, This Week and Due Later, each with its people, its group (planner, internal or personal), its project and its status." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Tasks</span></figcaption>
+             </figure>
+             </div>
+             <div class="roll">
+             <span class="roll__loop"><svg class="gline gline--loop" viewBox="0 0 104 100" data-in="0,58" data-out="0,38" aria-hidden="true" focusable="false"><path class="gl" d="M0,58 L10,58 Q15.5,58 17,62 A37,37 0 0 0 52,87 A37,37 0 0 0 89,50 A37,37 0 0 0 52,13 A37,37 0 0 0 19,33 Q16,38 10,38 L0,38"/></svg><b class="roll__n">18%</b></span>
+             <span class="roll__t">Stage 3 · rolled up from its finished tasks</span>
+             </div>
+            </div>
+            <figcaption class="fnote">Only Done counts. A task is 0 or 100, so the roll-up shows finished work, not estimates.</figcaption>
+          </figure>
+          <div class="dev">
+            <p class="dev__h">On the drawing board</p>
+            <ul>
+              <!-- claims:a02.dev -->
+              <li data-claim="P-10" data-status="dev"><span>Gantt view of the planner</span><span class="tag tag--dev">In development</span></li>
+              <li data-claim="P-11" data-status="dev"><span>Kanban board for tasks</span><span class="tag tag--dev">In development</span></li>
+              <li data-claim="P-12" data-status="dev"><span>Drawing register</span><span class="tag tag--dev">In development</span></li>
+              <li data-claim="P-13" data-status="dev"><span>Client portal</span><span class="tag tag--dev">In development</span></li>
+              <!-- /claims:a02.dev -->
+            </ul>
+          </div>
+          <div class="ground" aria-hidden="true"><span class="bubble">2</span><span class="ground__ch">CH 2+000 · Design stages</span></div>
+        </div>
+      </article>
+
+      <!-- A-03 -->
+      <article class="panel sheet sheet--devleft" id="a03" data-sheet="Sheet A-03" data-title="The studio&rsquo;s week" aria-labelledby="a03-t">
+        <div class="sheet__in">
+          <p class="stamp" aria-hidden="true"><span>A-03</span><span>The studio&rsquo;s week</span><span class="stamp__s">Live</span><span>Demo data</span></p>
+          <div class="sheet__text">
+            <p class="sheet__no" aria-hidden="true" data-n="03"></p>
+            <h3 id="a03-t" class="display sheet__t">The studio&rsquo;s week</h3>
+            <p class="sheet__lede">One timesheet per person per week, against the milestones the fee is tied to. Attendance and leave sit beside it.</p>
+            <div class="sch">
+              <p class="sch__head" aria-hidden="true"><span>Ref</span><span>Item</span><span>Status</span></p>
+              <ol class="sch__list" aria-label="Schedule A-03: timesheets, attendance and leave, with status">
+                <!-- claims:a03.schedule -->
+                <li data-claim="W-01" data-status="live"><span class="sch__ref">W-01</span><span class="sch__item">One timesheet per person per week, Monday to Sunday: a row per project and milestone, against a task or a remark.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-02" data-status="live"><span class="sch__ref">W-02</span><span class="sch__item">Copy Last Week fills the grid with last week&rsquo;s rows and hours.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-03" data-status="live"><span class="sch__ref">W-03</span><span class="sch__item">Each row shows the hours left in the project&rsquo;s budget for your designation.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-04" data-status="live"><span class="sch__ref">W-04</span><span class="sch__item">Submit, then approve or reject with a reason. Approved hours are costed to the milestone at each person&rsquo;s hourly rate.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-05" data-status="live"><span class="sch__ref">W-05</span><span class="sch__item">An attendance calendar for the month: check-in, check-out and total hours per day, with late and early marks.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-06" data-status="live"><span class="sch__ref">W-06</span><span class="sch__item">Punches from a connected office attendance device arrive every hour; or check in and out on the web.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-07" data-status="live"><span class="sch__ref">W-07</span><span class="sch__item">Three requests from the same screen: regularisation, work from home and outdoor duty.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-08" data-status="live"><span class="sch__ref">W-08</span><span class="sch__item">Leave: balances by type, full or half days, optional holidays; a team leave calendar for managers.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-09" data-status="live"><span class="sch__ref">W-09</span><span class="sch__item">A Team view for managers: who is late, on leave or on outdoor duty today, and the pending approvals in one card.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="W-10" data-status="live"><span class="sch__ref">W-10</span><span class="sch__item">Timesheet compliance by week, month and quarter; billable against non-billable hours.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <!-- /claims:a03.schedule -->
+              </ol>
+            </div>
+          </div>
+          <figure class="sheet__fig">
+            <div class="vg vg--week" data-illustrates="W-01 W-02 W-03 W-04 W-05">
+             <div class="shot shot--a03" data-n="2">
+             <figure class="scr scr--a scr--app" data-area="App" data-title="Timesheet" style="--ar:1.7778">
+              <a class="scr__open" href="assets/screens/a03-timesheet-large.webp" data-large="assets/screens/a03-timesheet-large.webp" data-vw="1440" aria-label="Timesheet, App. Open the screen larger."><img src="assets/screens/a03-timesheet.webp" width="1600" height="900" alt="A week&rsquo;s timesheet in Inspera: three rows by project, milestone and task, the hours for each day, the remaining budgeted hours, and the status Approved." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Timesheet</span></figcaption>
+             </figure>
+             <figure class="scr scr--b scr--app" data-area="App" data-title="Attendance" style="--ar:1.6">
+              <a class="scr__open" href="assets/screens/a03-attendance-large.webp" data-large="assets/screens/a03-attendance-large.webp" data-vw="1440" aria-label="Attendance, App. Open the screen larger."><img src="assets/screens/a03-attendance.webp" width="1400" height="875" alt="The Attendance page in Inspera: November&rsquo;s calendar with check-in, check-out and hours for each day; the month&rsquo;s counts of working days, present, absent, holidays, weekly offs and leave; and beside it one day opened, an approved outdoor duty: a site visit against a project." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Attendance</span></figcaption>
+             </figure>
+             </div>
+             <svg class="gline gline--comb" viewBox="0 0 700 56" data-in="0,46" data-out="700,46" aria-hidden="true" focusable="false">
+             <path class="gl" d="M0,46 L9,46 Q16,46 16,39 L16,17 Q16,10 23,10 L77,10 Q84,10 84,17 L84,39 Q84,46 91,46 L109,46 Q116,46 116,39 L116,17 Q116,10 123,10 L177,10 Q184,10 184,17 L184,39 Q184,46 191,46 L209,46 Q216,46 216,39 L216,17 Q216,10 223,10 L277,10 Q284,10 284,17 L284,39 Q284,46 291,46 L309,46 Q316,46 316,39 L316,17 Q316,10 323,10 L377,10 Q384,10 384,17 L384,39 Q384,46 391,46 L409,46 Q416,46 416,39 L416,17 Q416,10 423,10 L477,10 Q484,10 484,17 L484,39 Q484,46 491,46 L510,46 Q516,46 516,40 L516,40 Q516,34 522,34 L578,34 Q584,34 584,40 L584,40 Q584,46 590,46 L610,46 Q616,46 616,40 L616,40 Q616,34 622,34 L678,34 Q684,34 684,40 L684,40 Q684,46 690,46 L700,46"/>
+             <g class="gt"><text x="50" y="33" text-anchor="middle">MON</text><text x="150" y="33" text-anchor="middle">TUE</text><text x="250" y="33" text-anchor="middle">WED</text><text x="350" y="33" text-anchor="middle">THU</text><text x="450" y="33" text-anchor="middle">FRI</text><text x="550" y="27" text-anchor="middle">SAT</text><text x="650" y="27" text-anchor="middle">SUN</text></g>
+             </svg>
+            </div>
+            <figcaption class="fnote">Approved hours are costed to the milestone at each person&rsquo;s hourly rate. A red budget mark means the role&rsquo;s hours are used up.</figcaption>
+          </figure>
+          <div class="dev">
+            <p class="dev__h">On the drawing board</p>
+            <ul>
+              <!-- claims:a03.dev -->
+              <li data-claim="W-11" data-status="dev"><span>Notification bell in the App</span><span class="tag tag--dev">In development</span></li>
+              <!-- /claims:a03.dev -->
+            </ul>
+          </div>
+          <div class="ground" aria-hidden="true"><span class="bubble">3</span><span class="ground__ch">CH 3+000 · The studio&rsquo;s week</span></div>
+        </div>
+      </article>
+
+      <!-- A-04 -->
+      <article class="panel sheet sheet--devleft" id="a04" data-sheet="Sheet A-04" data-title="Site" aria-labelledby="a04-t">
+        <div class="sheet__in">
+          <p class="stamp" aria-hidden="true"><span>A-04</span><span>Site</span><span class="stamp__s">Live</span><span>Demo data</span></p>
+          <div class="sheet__text">
+            <p class="sheet__no" aria-hidden="true" data-n="04"></p>
+            <h3 id="a04-t" class="display sheet__t">Site</h3>
+            <p class="sheet__lede">A day on site is an outdoor-duty entry against the project. That day&rsquo;s cab fare and printouts become claims tagged to it.</p>
+            <div class="sch">
+              <p class="sch__head" aria-hidden="true"><span>Ref</span><span>Item</span><span>Status</span></p>
+              <ol class="sch__list" aria-label="Schedule A-04: outdoor duty, expenses and advances, with status">
+                <!-- claims:a04.schedule -->
+                <li data-claim="S-01" data-status="live"><span class="sch__ref">S-01</span><span class="sch__item">Outdoor duty: log a day on site against the project, by duty type, full day or timed.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="S-02" data-status="live"><span class="sch__ref">S-02</span><span class="sch__item">On approval, the day&rsquo;s check-in and check-out are created and attendance is marked from them.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="S-03" data-status="live"><span class="sch__ref">S-03</span><span class="sch__item">Expenses in one sitting: several expenses, each with its category, date, amount, project and receipt.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="S-04" data-status="live"><span class="sch__ref">S-04</span><span class="sch__item">Each expense becomes its own claim, approved and paid one by one.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="S-05" data-status="live"><span class="sch__ref">S-05</span><span class="sch__item">The client-reimbursable flag and the project tag travel with the claim to accounts.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="S-06" data-status="live"><span class="sch__ref">S-06</span><span class="sch__item">Advances: request money before the spend; set it against later claims.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="S-07" data-status="live"><span class="sch__ref">S-07</span><span class="sch__item">Project areas by floor and size, so the whole team names the building the same way.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <!-- /claims:a04.schedule -->
+              </ol>
+            </div>
+          </div>
+          <figure class="sheet__fig">
+            <div class="vg vg--site" data-illustrates="S-03 S-04 S-05">
+             <div class="shot shot--a04" data-n="4">
+             <figure class="scr scr--a scr--app" data-area="App" data-title="Expenses" style="--ar:1.636">
+              <a class="scr__open" href="assets/screens/a04-expenses-large.webp" data-large="assets/screens/a04-expenses-large.webp" data-vw="1440" aria-label="Expenses, App. Open the screen larger."><img src="assets/screens/a04-expenses.webp" width="1600" height="978" alt="The Expenses page in Inspera: three expense requests tagged to a project and sent for approval, beside the form for entering several expenses at once." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Expenses</span></figcaption>
+             </figure>
+             <section class="phones" data-claim="N-04" data-status="dev" aria-label="Mobile app" style="--n:3;--par:0.4491">
+              <p class="scr__group"><span class="scr__area">Mobile app</span><span class="tag tag--dev">In development</span></p>
+              <figure class="scr scr--b scr--phone" data-area="Mobile app" data-title="Outdoor duty" data-claim="N-04" data-status="dev" style="--ar:0.4491">
+               <a class="scr__open" href="assets/screens/a04-phone-duty-large.webp" data-large="assets/screens/a04-phone-duty-large.webp" data-vw="448" aria-label="Outdoor duty, Mobile app, in development. Open the screen larger."><img src="assets/screens/a04-phone-duty.webp" width="520" height="1158" alt="The mobile app: an outdoor-duty request being filled in for 19 November, a site visit to Courtyard House for the full day, with its reason." loading="lazy" decoding="async"></a>
+               <figcaption class="scr__cap"><span>Outdoor duty</span></figcaption>
+              </figure>
+              <figure class="scr scr--c scr--phone" data-area="Mobile app" data-title="Expense claim" data-claim="N-04" data-status="dev" style="--ar:0.4491">
+               <a class="scr__open" href="assets/screens/a04-phone-claim-large.webp" data-large="assets/screens/a04-phone-claim-large.webp" data-vw="448" aria-label="Expense claim, Mobile app, in development. Open the screen larger."><img src="assets/screens/a04-phone-claim.webp" width="520" height="1158" alt="The mobile app: an expense claim for travel on 19 November against Courtyard House, marked client reimbursable, with a button to attach the receipt." loading="lazy" decoding="async"></a>
+               <figcaption class="scr__cap"><span>Expense claim</span></figcaption>
+              </figure>
+              <figure class="scr scr--d scr--phone" data-area="Mobile app" data-title="Timesheet" data-claim="N-04" data-status="dev" style="--ar:0.4491">
+               <a class="scr__open" href="assets/screens/a04-phone-timesheet-large.webp" data-large="assets/screens/a04-phone-timesheet-large.webp" data-vw="448" aria-label="Timesheet, Mobile app, in development. Open the screen larger."><img src="assets/screens/a04-phone-timesheet.webp" width="520" height="1158" alt="The mobile app: the week&rsquo;s timesheet, approved, with a row for Courtyard House, its milestone and task, the hours for each day and the remaining budgeted hours." loading="lazy" decoding="async"></a>
+               <figcaption class="scr__cap"><span>Timesheet</span></figcaption>
+              </figure>
+             </section>
+             </div>
+             <svg class="gline gline--site" viewBox="0 0 640 300" data-in="0,262" data-out="640,262" aria-hidden="true" focusable="false">
+             <g class="gd" data-a="sitegd">
+             <path d="M120,186H440M185,110V262M250,110V262M330,110V262M395,110V262M440,224H540M490,186V262"/>
+             <path d="M92,262V122M106,262V122M92,232H120M92,202H120M92,172H120M92,142H120M92,232L106,202M106,202L92,172M92,172L106,142"/>
+             <path class="hatch" d="M8,270l8-8M28,270l8-8M48,270l8-8M68,270l8-8M560,270l8-8M580,270l8-8M600,270l8-8M620,270l8-8"/>
+             <path d="M566,262h48M566,186h48M566,110h48M566,60h48M573,262l-4-7h8zM573,186l-4-7h8zM573,110l-4-7h8zM573,60l-4-7h8z"/>
+             <circle cx="52" cy="232" r="4.5"/><path d="M52,237V252M52,241l-7,6M52,241l7,6M52,252l-6,10M52,252l6,10"/>
+             </g>
+             <g class="gt"><text class="lv" x="614" y="249" text-anchor="end">±0.00</text><text class="lv" x="614" y="173" text-anchor="end">+3.60</text><text class="lv" x="614" y="97" text-anchor="end">+7.20</text><text class="lv" x="614" y="47" text-anchor="end">+9.60</text><text x="290" y="52" text-anchor="middle">STAIR CORE</text><text x="280" y="290" text-anchor="middle">SECTION A–A · COURTYARD HOUSE</text></g>
+             <path class="gl" d="M0,262 L114,262 Q120,262 120,256 L120,116 Q120,110 126,110 L244,110 Q250,110 250,104 L250,66 Q250,60 256,60 L324,60 Q330,60 330,66 L330,104 Q330,110 336,110 L434,110 Q440,110 440,116 L440,180 Q440,186 446,186 L534,186 Q540,186 540,192 L540,256 Q540,262 546,262 L640,262"/>
+             </svg>
+            </div>
+            <figcaption class="fnote">Each expense is approved and paid on its own, with its project and its client-reimbursable flag intact.</figcaption>
+          </figure>
+          <div class="dev">
+            <p class="dev__h">On the drawing board</p>
+            <ul>
+              <!-- claims:a04.dev -->
+              <li data-claim="S-08" data-status="dev"><span>Site updates from the field</span><span class="tag tag--dev">In development</span></li>
+              <li data-claim="S-09" data-status="dev"><span>Site photos</span><span class="tag tag--dev">In development</span></li>
+              <li data-claim="S-10" data-status="dev"><span>Snag lists</span><span class="tag tag--dev">In development</span></li>
+              <li data-claim="S-11" data-status="dev"><span>Materials library and approvals</span><span class="tag tag--dev">In development</span></li>
+              <li data-claim="N-04" data-status="dev"><span>Mobile app</span><span class="tag tag--dev">In development</span></li>
+              <!-- /claims:a04.dev -->
+            </ul>
+          </div>
+          <div class="ground" aria-hidden="true"><span class="bubble">4</span><span class="ground__ch">CH 4+000 · Site</span></div>
+        </div>
+      </article>
+
+      <!-- A-05 -->
+      <article class="panel sheet" id="a05" data-sheet="Sheet A-05" data-title="Money" aria-labelledby="a05-t">
+        <div class="sheet__in">
+          <p class="stamp" aria-hidden="true"><span>A-05</span><span>Money</span><span class="stamp__s">Live</span><span>Demo data</span></p>
+          <div class="sheet__text">
+            <p class="sheet__no" aria-hidden="true" data-n="05"></p>
+            <h3 id="a05-t" class="display sheet__t">Money</h3>
+            <p class="sheet__lede">Nothing on a project&rsquo;s finance page is typed in. It reads the contract, its invoices and receipts, and approved time.</p>
+            <div class="sch">
+              <p class="sch__head" aria-hidden="true"><span>Ref</span><span>Item</span><span>Status</span></p>
+              <ol class="sch__list" aria-label="Schedule A-05: fees, invoices, receipts and GST, with status">
+                <!-- claims:a05.schedule -->
+                <li data-claim="M-01" data-status="live"><span class="sch__ref">M-01</span><span class="sch__item">Every client invoice is raised against a contract milestone, never from scratch.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-02" data-status="live"><span class="sch__ref">M-02</span><span class="sch__item">Milestone status moves by itself: Not Due → Due → Payment Pending → Partial Received → Received.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-03" data-status="live"><span class="sch__ref">M-03</span><span class="sch__item">A milestone becomes Due at 100 % completion, or when the client approval date is entered.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-04" data-status="live"><span class="sch__ref">M-04</span><span class="sch__item">An invoice line cannot exceed the milestone&rsquo;s fee less what has already been received.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-05" data-status="live"><span class="sch__ref">M-05</span><span class="sch__item">A receipt fills its milestone allocation from the invoices it settles; an advance can be received first and reconciled later.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-06" data-status="live"><span class="sch__ref">M-06</span><span class="sch__item">The project&rsquo;s money on one page: fee, collected before GST, balance, timesheet cost and margin; In Budget, Alert or Cost Exceeded.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-07" data-status="live"><span class="sch__ref">M-07</span><span class="sch__item">GST on every invoice: IGST or CGST + SGST from the place of supply, HSN/SAC on the lines, e-invoice (IRN) where required.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-08" data-status="live"><span class="sch__ref">M-08</span><span class="sch__item">GSTR-1 and GSTR-3B data prepared for your CA; purchases reconciled against GSTR-2B for input tax credit.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-09" data-status="live"><span class="sch__ref">M-09</span><span class="sch__item">The full books: purchases, journals, receivables and payables by age, ledger, trial balance, profit and loss, balance sheet.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="M-10" data-status="live"><span class="sch__ref">M-10</span><span class="sch__item">Profit and loss for a single project, or for a single service line.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <!-- /claims:a05.schedule -->
+              </ol>
+            </div>
+          </div>
+          <figure class="sheet__fig">
+            <div class="vg vg--money" data-illustrates="M-01 M-02 M-06 M-07">
+             <div class="shot shot--a05" data-n="2">
+             <figure class="scr scr--a scr--app" data-area="App" data-title="Project finances" style="--ar:1.7778">
+              <a class="scr__open" href="assets/screens/a05-finances-large.webp" data-large="assets/screens/a05-finances-large.webp" data-vw="1440" aria-label="Project finances, App. Open the screen larger."><img src="assets/screens/a05-finances.webp" width="1600" height="900" alt="The Finances page of a project in Inspera: the contract, the project&rsquo;s fee, collections, timesheet cost and margin, and its milestone table showing for each milestone the invoice date, the amount invoiced, the payment received, what is pending and the status." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Project finances</span></figcaption>
+             </figure>
+             <figure class="scr scr--b scr--desk" data-area="Desk" data-title="Sales invoice" style="--ar:0.7353">
+              <a class="scr__open" href="assets/screens/a05-invoice-large.webp" data-large="assets/screens/a05-invoice-large.webp" data-vw="1100" aria-label="Sales invoice, Desk. Open the screen larger."><img src="assets/screens/a05-invoice.webp" width="1200" height="1632" alt="A sales invoice in the Desk, marked Paid: the customer, the contract and the milestone it is raised against, one line for architectural design services, and the tax table with CGST and SGST at 9 % each." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">Desk</span><span>Sales invoice</span></figcaption>
+             </figure>
+             </div>
+             <svg class="gline gline--rail" viewBox="0 0 640 86" data-in="0,62" data-out="640,14" aria-hidden="true" focusable="false">
+             <path class="gl" d="M0,62 L64,62 Q70,62 76,62 L126,62 Q132,62 132,56 Q132,50 138,50 L189,50 Q195,50 201,50 L251,50 Q257,50 257,44 Q257,38 263,38 L314,38 Q320,38 326,38 L376,38 Q382,38 382,32 Q382,26 388,26 L439,26 Q445,26 451,26 L501,26 Q507,26 507,20 Q507,14 513,14 L564,14 Q570,14 576,14 L640,14"/>
+             <g class="gn"><circle data-a="node" cx="70" cy="62" r="6"/><circle data-a="node" cx="195" cy="50" r="6"/><circle data-a="node" cx="320" cy="38" r="6"/><circle data-a="node" cx="445" cy="26" r="6"/><circle data-a="node" cx="570" cy="14" r="6"/></g>
+             <g class="gt"><text x="70" y="82" text-anchor="middle">NOT DUE</text><text x="195" y="70" text-anchor="middle">DUE</text><text x="320" y="58" text-anchor="middle"><tspan class="lg">PAYMENT </tspan>PENDING</text><text x="445" y="46" text-anchor="middle">PARTIAL<tspan class="lg"> RECEIVED</tspan></text><text x="570" y="34" text-anchor="middle">RECEIVED</text></g>
+
+             </svg>
+            </div>
+            <figcaption class="fnote">Margin here is collected fees less timesheet cost to date: a cash view, not a forecast.</figcaption>
+          </figure>
+          <div class="ground" aria-hidden="true"><span class="bubble">5</span><span class="ground__ch">CH 5+000 · Money</span></div>
+        </div>
+      </article>
+
+      <!-- A-06 -->
+      <article class="panel sheet" id="a06" data-sheet="Sheet A-06" data-title="People" aria-labelledby="a06-t">
+        <div class="sheet__in">
+          <p class="stamp" aria-hidden="true"><span>A-06</span><span>People</span><span class="stamp__s">Live</span><span>Demo data</span></p>
+          <div class="sheet__text">
+            <p class="sheet__no" aria-hidden="true" data-n="06"></p>
+            <h3 id="a06-t" class="display sheet__t">People</h3>
+            <p class="sheet__lede">A request to hire becomes an opening, an offer, then an employee record with its shift, approvers and hourly cost.</p>
+            <div class="sch">
+              <p class="sch__head" aria-hidden="true"><span>Ref</span><span>Item</span><span>Status</span></p>
+              <ol class="sch__list" aria-label="Schedule A-06: hiring, employee records and payroll, with status">
+                <!-- claims:a06.schedule -->
+                <li data-claim="H-01" data-status="live"><span class="sch__ref">H-01</span><span class="sch__item">Raise a requisition from the App: department, designation, openings, expected closure, budget and reason.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-02" data-status="live"><span class="sch__ref">H-02</span><span class="sch__item">The hiring pipeline: job opening, applicants with their resumes, interview rounds, offer.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-03" data-status="live"><span class="sch__ref">H-03</span><span class="sch__item">Interview feedback from each interviewer: a star rating per skill, Cleared or Rejected, comments.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-04" data-status="live"><span class="sch__ref">H-04</span><span class="sch__item">An accepted offer becomes the employee record.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-05" data-status="live"><span class="sch__ref">H-05</span><span class="sch__item">The employee record sets reporting lines, approvers, shift and holiday list; a new joiner is on the firm&rsquo;s internal project from day one.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-06" data-status="live"><span class="sch__ref">H-06</span><span class="sch__item">Shift rules mark attendance from punches: late-entry grace, half-day and absent thresholds.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-07" data-status="live"><span class="sch__ref">H-07</span><span class="sch__item">Leave rules: earned leave credited in instalments, carry-forward, encashment and compensatory leave.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-08" data-status="live"><span class="sch__ref">H-08</span><span class="sch__item">Payroll in Inspera: salary structures and a monthly run that builds salary slips from attendance and leave, with PF, ESI, professional tax and TDS.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-09" data-status="live"><span class="sch__ref">H-09</span><span class="sch__item">Or keep payroll outside: Inspera supplies the month&rsquo;s attendance, leave and loss-of-pay summary.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-10" data-status="live"><span class="sch__ref">H-10</span><span class="sch__item">Staff view and download their own salary slips.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="H-11" data-status="live"><span class="sch__ref">H-11</span><span class="sch__item">The cost of an hour, per person and period: salary plus seat cost. Project costing uses it.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <!-- /claims:a06.schedule -->
+              </ol>
+            </div>
+          </div>
+          <figure class="sheet__fig">
+            <div class="vg vg--people" data-illustrates="H-01 H-02 W-08">
+             <div class="shot shot--a06" data-n="2">
+             <figure class="scr scr--a scr--app" data-area="App" data-title="Recruitment" style="--ar:1.6546">
+              <a class="scr__open" href="assets/screens/a06-hiring-large.webp" data-large="assets/screens/a06-hiring-large.webp" data-vw="1440" aria-label="Recruitment, App. Open the screen larger."><img src="assets/screens/a06-hiring.webp" width="1600" height="967" alt="The Recruitment page in Inspera: two open requisitions with their progress and interviews, beside the form for a new requisition." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Recruitment</span></figcaption>
+             </figure>
+             <figure class="scr scr--b scr--app" data-area="App" data-title="Leave" style="--ar:1.6">
+              <a class="scr__open" href="assets/screens/a06-leave-large.webp" data-large="assets/screens/a06-leave-large.webp" data-vw="1440" aria-label="Leave, App. Open the screen larger."><img src="assets/screens/a06-leave.webp" width="1400" height="875" alt="The Leave page in Inspera: balances for casual, privilege and sick leave, the leave history, upcoming holidays, the request form with full day or half day, and a pending request." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Leave</span></figcaption>
+             </figure>
+             </div>
+             <svg class="gline gline--pipe" viewBox="0 0 720 100" data-in="0,60" data-out="720,60" aria-hidden="true" focusable="false">
+             <path class="gl" d="M0,60 L620,60 L620,22 A38,38 0 0 1 658,60 L720,60"/>
+             <g class="gn"><circle data-a="node" cx="50" cy="60" r="6"/><circle data-a="node" cx="170" cy="60" r="6"/><circle data-a="node" cx="290" cy="60" r="6"/><circle data-a="node" cx="410" cy="60" r="6"/><circle data-a="node" cx="530" cy="60" r="6"/></g>
+             <g class="gt"><text x="50" y="84" text-anchor="middle">REQUISITION</text><text x="170" y="84" text-anchor="middle">OPENING</text><text x="290" y="84" text-anchor="middle">APPLICANTS</text><text x="410" y="84" text-anchor="middle">INTERVIEW</text><text x="530" y="84" text-anchor="middle">OFFER</text><text x="640" y="84" text-anchor="middle">EMPLOYEE</text></g>
+             </svg>
+            </div>
+            <figcaption class="fnote">A requisition carries its department, designation, openings, expected closure, budget and reason; interviews are tracked against it.</figcaption>
+          </figure>
+          <div class="ground" aria-hidden="true"><span class="bubble">6</span><span class="ground__ch">CH 6+000 · People</span></div>
+        </div>
+      </article>
+
+      <!-- A-07 -->
+      <article class="panel sheet" id="a07" data-sheet="Sheet A-07" data-title="Insight" aria-labelledby="a07-t">
+        <div class="sheet__in">
+          <p class="stamp" aria-hidden="true"><span>A-07</span><span>Insight</span><span class="stamp__s">Live</span><span>Demo data</span></p>
+          <div class="sheet__text">
+            <p class="sheet__no" aria-hidden="true" data-n="07"></p>
+            <h3 id="a07-t" class="display sheet__t">Insight</h3>
+            <p class="sheet__lede">Every figure is computed from records already in Inspera. Nobody prepares a report; they open one.</p>
+            <div class="sch">
+              <p class="sch__head" aria-hidden="true"><span>Ref</span><span>Item</span><span>Status</span></p>
+              <ol class="sch__list" aria-label="Schedule A-07: dashboards and reports, with status">
+                <!-- claims:a07.schedule -->
+                <li data-claim="D-01" data-status="live"><span class="sch__ref">D-01</span><span class="sch__item">Dashboards by role, where your firm switches them on: Landing, Projects, Finance, Human Resources and CRM.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="D-02" data-status="live"><span class="sch__ref">D-02</span><span class="sch__item">Finance: collections for the year, quarter-wise projections from milestone dates, debtors ageing by customer, year-on-year collection.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="D-03" data-status="live"><span class="sch__ref">D-03</span><span class="sch__item">Projects: active, completed, delayed and on track; progress per project; distribution by contract lead.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="D-04" data-status="live"><span class="sch__ref">D-04</span><span class="sch__item">People: headcount and movement, the hiring funnel, tenure, exit reasons and leave trends.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="D-05" data-status="live"><span class="sch__ref">D-05</span><span class="sch__item">Chargeability: billable hours by person and by team.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="D-06" data-status="live"><span class="sch__ref">D-06</span><span class="sch__item">Timesheet reports in the App: Weekly Compliance, Monthly Summary, Missing Timesheets, Project Hours and Utilization.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="D-07" data-status="live"><span class="sch__ref">D-07</span><span class="sch__item">Project Hours adds each project&rsquo;s cost and its contract&rsquo;s invoiced, collected, outstanding and margin to date.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="D-08" data-status="live"><span class="sch__ref">D-08</span><span class="sch__item">Reports export to Excel or CSV; a Desk report can arrive by email on a schedule.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <li data-claim="D-09" data-status="live"><span class="sch__ref">D-09</span><span class="sch__item">Build a report from any list: choose columns, filter, group, total and save it for the firm.</span><span class="sch__st"><span class="tag tag--live">Live</span></span></li>
+                <!-- /claims:a07.schedule -->
+              </ol>
+            </div>
+          </div>
+          <figure class="sheet__fig">
+            <div class="vg vg--insight" data-illustrates="D-01 D-02 D-05 D-06 D-07">
+             <div class="shot shot--a07" data-n="2">
+             <figure class="scr scr--a scr--app" data-area="App" data-title="Finance dashboard" style="--ar:1.7778">
+              <a class="scr__open" href="assets/screens/a07-finance-large.webp" data-large="assets/screens/a07-finance-large.webp" data-vw="1440" aria-label="Finance dashboard, App. Open the screen larger."><img src="assets/screens/a07-finance.webp" width="1600" height="900" alt="The Finance dashboard in Inspera: collections for the year, the split by service, revenue, expenses and profit by year, and projections by quarter." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Finance dashboard</span></figcaption>
+             </figure>
+             <figure class="scr scr--b scr--app" data-area="App" data-title="Reports" style="--ar:1.7766">
+              <a class="scr__open" href="assets/screens/a07-reports-large.webp" data-large="assets/screens/a07-reports-large.webp" data-vw="1440" aria-label="Reports, App. Open the screen larger."><img src="assets/screens/a07-reports.webp" width="1400" height="788" alt="The Project Hours report in Inspera for the month to date: the number of projects, hours and billable hours, then cost, invoiced, collected and margin to date, and the hours logged on each project." loading="lazy" decoding="async"></a>
+              <figcaption class="scr__cap"><span class="scr__area">App</span><span>Reports</span></figcaption>
+             </figure>
+             </div>
+             <div class="trend"><svg class="gline gline--chart" viewBox="0 0 520 84" data-in="0,69.44" data-out="520,15.68" aria-hidden="true" focusable="false">
+             <g class="gd"><path d="M0,78.4H520M0,56H520M0,33.6H520M0,11.2H520"/></g>
+             <path class="gl" d="M0,69.44 L17.13,66.56 Q20,66.08 22.86,65.56 L60.74,58.76 Q63.6,58.24 66.57,58.47 L104.23,61.37 Q107.2,61.6 109.97,60.96 L148.03,52.16 Q150.8,51.52 153.77,51.75 L191.43,54.65 Q194.4,54.88 197.17,54.24 L235.23,45.44 Q238,44.8 240.97,45.03 L278.63,47.93 Q281.6,48.16 284.33,47.46 L322.47,37.66 Q325.2,36.96 328.15,37.26 L365.85,41.14 Q368.8,41.44 371.48,40.68 L409.72,29.88 Q412.4,29.12 415.37,29.35 L453.03,32.25 Q456,32.48 458.63,31.67 L496.97,19.85 Q499.6,19.04 502.48,18.56 L520,15.68"/>
+             </svg></div>
+            </div>
+            <figcaption class="fnote">The dashboards are an optional module, switched on per firm. The tabs a person sees follow their role.</figcaption>
+          </figure>
+          <div class="ground" aria-hidden="true"><span class="bubble">7</span><span class="ground__ch">CH 7+000 · Insight</span></div>
+        </div>
+      </article>
+
+      <!-- outro -->
+      <div class="panel panel--outro" id="a08" data-sheet="Sheets A-01–A-07" data-title="End of set">
+        <div class="outro">
+          <p class="kicker" data-reveal>End of the drawing set</p>
+          <p class="display outro__h" data-split>The line keeps going.</p>
+          <p class="outro__p" data-reveal>Next: who sees what, what is still on the drawing board, and how we set it up with your team.</p>
+          <a class="btn" href="#walkthrough" data-magnetic data-reveal>Request a walkthrough</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ 09 · KEY PLAN ═════════════════════════ -->
+<section class="roles" id="roles" data-theme="paper" data-sheet="Sheet 09" data-title="Key plan" aria-labelledby="roles-h">
+  <svg class="route" aria-hidden="true" focusable="false"></svg>
+  <div class="wrap">
+    <header class="roles__head">
+      <p class="kicker" data-reveal><span class="kicker__no">Sheet 09</span>Key plan</p>
+      <h2 id="roles-h" class="display" data-split>Your studio, in one place. Each person, their own door.</h2>
+      <p class="roles__intro" data-reveal>Everyone works on the same records. What each person sees depends on their role, and the fees stay behind a door you control.</p>
+    </header>
+    <div class="roles__grid">
+      <div class="roles__plan" aria-hidden="true">
+        <div class="planbox" data-anchor="planbox">
+          <!-- claims:roles.keyplan -->
+          <svg class="keyplan keyplan--main" viewBox="-1 -1 28 18" aria-hidden="true" focusable="false" id="keyplan">
+            <rect class="kp-room kp-idle" data-room="projects" x="9" y="0" width="17" height="9"/>
+            <rect class="kp-room kp-idle" data-room="contracts" x="0" y="0" width="9" height="6"/>
+            <rect class="kp-room kp-idle" data-room="time" x="18" y="9" width="8" height="7"/>
+            <rect class="kp-room kp-idle" data-room="people" x="0" y="11" width="9" height="5"/>
+            <rect class="kp-room kp-idle" data-room="accounts" x="0" y="6" width="9" height="5"/>
+            <rect class="kp-room kp-idle" data-room="insight" x="9" y="9" width="9" height="7"/>
+            <path class="kp-walls-u" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+            <path class="kp-walls" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+            <text class="kp-label" data-room="projects" x="17.5" y="4.25" text-anchor="middle"><tspan x="17.5">PROJECTS</tspan><tspan x="17.5" dy="1.15">&amp; PLANNER</tspan></text>
+            <text class="kp-label" data-room="contracts" x="4.5" y="2.75" text-anchor="middle"><tspan x="4.5">CONTRACTS</tspan><tspan x="4.5" dy="1.15">&amp; FEES</tspan></text>
+            <text class="kp-label" data-room="time" x="22.0" y="12.25" text-anchor="middle"><tspan x="22.0">TIME &amp;</tspan><tspan x="22.0" dy="1.15">ATTENDANCE</tspan></text>
+            <text class="kp-label" data-room="people" x="4.5" y="13.25" text-anchor="middle"><tspan x="4.5">PEOPLE</tspan><tspan x="4.5" dy="1.15">&amp; PAYROLL</tspan></text>
+            <text class="kp-label" data-room="accounts" x="4.5" y="8.25" text-anchor="middle"><tspan x="4.5">ACCOUNTS</tspan><tspan x="4.5" dy="1.15">&amp; GST</tspan></text>
+            <text class="kp-label" data-room="insight" x="13.5" y="12.25" text-anchor="middle"><tspan x="13.5">DASHBOARDS</tspan><tspan x="13.5" dy="1.15">&amp; REPORTS</tspan></text>
+          </svg>
+          <!-- /claims:roles.keyplan -->
+          <p class="planbox__cap"><b class="planbox__role">Principal</b><span>where this role works</span></p>
+          <ul class="planbox__key"><li><i class="kp-full"></i>Works here</li><li><i class="kp-part"></i>Own records, or by switch</li></ul>
+        </div>
+      </div>
+      <div class="roles__list">
+        <!-- claims:roles.articles -->
+        <article class="role" id="role-principal" data-role="principal" data-rooms="{&quot;projects&quot;:&quot;full&quot;,&quot;contracts&quot;:&quot;full&quot;,&quot;time&quot;:&quot;full&quot;,&quot;people&quot;:&quot;full&quot;,&quot;accounts&quot;:&quot;full&quot;,&quot;insight&quot;:&quot;full&quot;}">
+          <header class="role__head">
+            <span class="bubble" aria-hidden="true">P</span>
+            <h3 class="role__name">Principal</h3>
+            <svg class="keyplan keyplan--mini" viewBox="-1 -1 28 18" aria-hidden="true" focusable="false">
+              <rect class="kp-room kp-full" data-room="projects" x="9" y="0" width="17" height="9"/>
+              <rect class="kp-room kp-full" data-room="contracts" x="0" y="0" width="9" height="6"/>
+              <rect class="kp-room kp-full" data-room="time" x="18" y="9" width="8" height="7"/>
+              <rect class="kp-room kp-full" data-room="people" x="0" y="11" width="9" height="5"/>
+              <rect class="kp-room kp-full" data-room="accounts" x="0" y="6" width="9" height="5"/>
+              <rect class="kp-room kp-full" data-room="insight" x="9" y="9" width="9" height="7"/>
+              <path class="kp-walls-u" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+              <path class="kp-walls" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+            </svg>
+          </header>
+          <p class="role__line">The whole practice, without asking anyone for a report.</p>
+          <p class="sr-only">Where this role works. Projects &amp; planner: works here; Contracts &amp; fees: works here; Time &amp; attendance: works here; People &amp; payroll: works here; Accounts &amp; GST: works here; Dashboards &amp; reports: works here.</p>
+          <ul class="role__list">
+            <li data-claim="R-P1" data-status="live"><span>Opens the Dashboard: Landing, Projects, Finance, Human Resources and CRM, where the firm has switched it on.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-P2" data-status="live"><span>Reads a project&rsquo;s fee, collected, timesheet cost and margin on one page.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-P3" data-status="live"><span>Sees quarter-wise projections, debtors by age and collections against earlier years.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-P4" data-status="live"><span>Gets firm-wide timesheet reports, with cost, invoiced, collected and margin per project.</span><span class="tag tag--live">Live</span></li>
+          </ul>
+        </article>
+        <article class="role" id="role-manager" data-role="manager" data-rooms="{&quot;projects&quot;:&quot;full&quot;,&quot;contracts&quot;:&quot;none&quot;,&quot;time&quot;:&quot;full&quot;,&quot;people&quot;:&quot;part&quot;,&quot;accounts&quot;:&quot;none&quot;,&quot;insight&quot;:&quot;part&quot;}">
+          <header class="role__head">
+            <span class="bubble" aria-hidden="true">SM</span>
+            <h3 class="role__name">Studio manager</h3>
+            <svg class="keyplan keyplan--mini" viewBox="-1 -1 28 18" aria-hidden="true" focusable="false">
+              <rect class="kp-room kp-full" data-room="projects" x="9" y="0" width="17" height="9"/>
+              <rect class="kp-room kp-none" data-room="contracts" x="0" y="0" width="9" height="6"/>
+              <rect class="kp-room kp-full" data-room="time" x="18" y="9" width="8" height="7"/>
+              <rect class="kp-room kp-part" data-room="people" x="0" y="11" width="9" height="5"/>
+              <rect class="kp-room kp-none" data-room="accounts" x="0" y="6" width="9" height="5"/>
+              <rect class="kp-room kp-part" data-room="insight" x="9" y="9" width="9" height="7"/>
+              <path class="kp-walls-u" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+              <path class="kp-walls" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+            </svg>
+          </header>
+          <p class="role__line">The studio&rsquo;s day and week, and everything waiting for a decision.</p>
+          <p class="sr-only">Where this role works. Projects &amp; planner: works here; Time &amp; attendance: works here; People &amp; payroll: own records, or by switch; Dashboards &amp; reports: own records, or by switch.</p>
+          <ul class="role__list">
+            <li data-claim="R-S1" data-status="live"><span>Opens Home on the Team view: late check-ins, early check-outs, who is on leave and on outdoor duty today.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-S2" data-status="live"><span>Sees every pending approval in one card: leave, regularisation, outdoor duty, timesheets and reimbursements.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-S3" data-status="live"><span>Tracks the team&rsquo;s timesheet compliance, and the days each person has not filed.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-S4" data-status="live"><span>Sees who carries the most overdue tasks, and which projects are delayed.</span><span class="tag tag--live">Live</span></li>
+          </ul>
+        </article>
+        <article class="role" id="role-lead" data-role="lead" data-rooms="{&quot;projects&quot;:&quot;full&quot;,&quot;contracts&quot;:&quot;part&quot;,&quot;time&quot;:&quot;part&quot;,&quot;people&quot;:&quot;none&quot;,&quot;accounts&quot;:&quot;none&quot;,&quot;insight&quot;:&quot;none&quot;}">
+          <header class="role__head">
+            <span class="bubble" aria-hidden="true">PL</span>
+            <h3 class="role__name">Project lead</h3>
+            <svg class="keyplan keyplan--mini" viewBox="-1 -1 28 18" aria-hidden="true" focusable="false">
+              <rect class="kp-room kp-full" data-room="projects" x="9" y="0" width="17" height="9"/>
+              <rect class="kp-room kp-part" data-room="contracts" x="0" y="0" width="9" height="6"/>
+              <rect class="kp-room kp-part" data-room="time" x="18" y="9" width="8" height="7"/>
+              <rect class="kp-room kp-none" data-room="people" x="0" y="11" width="9" height="5"/>
+              <rect class="kp-room kp-none" data-room="accounts" x="0" y="6" width="9" height="5"/>
+              <rect class="kp-room kp-none" data-room="insight" x="9" y="9" width="9" height="7"/>
+              <path class="kp-walls-u" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+              <path class="kp-walls" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+            </svg>
+          </header>
+          <p class="role__line">One project, end to end: the plan, the team, the hours and, if you allow it, the money.</p>
+          <p class="sr-only">Where this role works. Projects &amp; planner: works here; Contracts &amp; fees: own records, or by switch; Time &amp; attendance: own records, or by switch.</p>
+          <ul class="role__list">
+            <li data-claim="R-L1" data-status="live"><span>Runs the planner: deliverables, tasks, owners, dates and status.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-L2" data-status="live"><span>Adds people and areas to the project from its Overview.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-L3" data-status="live"><span>Enters the client approval date, which makes the milestone Due for billing.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-L4" data-status="live"><span>Watches budgeted hours by role against the hours used.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-L5" data-status="live"><span>Sees the project&rsquo;s Finances and Settings tabs when they are switched on for them.</span><span class="tag tag--live">Live</span></li>
+          </ul>
+        </article>
+        <article class="role" id="role-designer" data-role="designer" data-rooms="{&quot;projects&quot;:&quot;part&quot;,&quot;contracts&quot;:&quot;none&quot;,&quot;time&quot;:&quot;part&quot;,&quot;people&quot;:&quot;part&quot;,&quot;accounts&quot;:&quot;none&quot;,&quot;insight&quot;:&quot;none&quot;}">
+          <header class="role__head">
+            <span class="bubble" aria-hidden="true">D</span>
+            <h3 class="role__name">Designer</h3>
+            <svg class="keyplan keyplan--mini" viewBox="-1 -1 28 18" aria-hidden="true" focusable="false">
+              <rect class="kp-room kp-part" data-room="projects" x="9" y="0" width="17" height="9"/>
+              <rect class="kp-room kp-none" data-room="contracts" x="0" y="0" width="9" height="6"/>
+              <rect class="kp-room kp-part" data-room="time" x="18" y="9" width="8" height="7"/>
+              <rect class="kp-room kp-part" data-room="people" x="0" y="11" width="9" height="5"/>
+              <rect class="kp-room kp-none" data-room="accounts" x="0" y="6" width="9" height="5"/>
+              <rect class="kp-room kp-none" data-room="insight" x="9" y="9" width="9" height="7"/>
+              <path class="kp-walls-u" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+              <path class="kp-walls" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+            </svg>
+          </header>
+          <p class="role__line">Their projects, their tasks, their week. Nothing else in the way.</p>
+          <p class="sr-only">Where this role works. Projects &amp; planner: own records, or by switch; Time &amp; attendance: own records, or by switch; People &amp; payroll: own records, or by switch.</p>
+          <ul class="role__list">
+            <li data-claim="R-D1" data-status="live"><span>Opens Home: today&rsquo;s attendance, the week&rsquo;s timesheet, their projects, and their tasks overdue and to do.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-D2" data-status="live"><span>Works the planner and the task list on the projects they are a member of.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-D3" data-status="live"><span>Fills the week&rsquo;s timesheet, applies for leave, raises outdoor-duty requests and expense claims.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-D4" data-status="live"><span>Downloads their own salary slip.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-D5" data-status="live"><span>Does not see fees, costs or margins unless a project&rsquo;s Finances tab is switched on for them.</span><span class="tag tag--live">Live</span></li>
+          </ul>
+        </article>
+        <article class="role" id="role-accounts" data-role="accounts" data-rooms="{&quot;projects&quot;:&quot;none&quot;,&quot;contracts&quot;:&quot;full&quot;,&quot;time&quot;:&quot;none&quot;,&quot;people&quot;:&quot;part&quot;,&quot;accounts&quot;:&quot;full&quot;,&quot;insight&quot;:&quot;part&quot;}">
+          <header class="role__head">
+            <span class="bubble" aria-hidden="true">A</span>
+            <h3 class="role__name">Accounts</h3>
+            <svg class="keyplan keyplan--mini" viewBox="-1 -1 28 18" aria-hidden="true" focusable="false">
+              <rect class="kp-room kp-none" data-room="projects" x="9" y="0" width="17" height="9"/>
+              <rect class="kp-room kp-full" data-room="contracts" x="0" y="0" width="9" height="6"/>
+              <rect class="kp-room kp-none" data-room="time" x="18" y="9" width="8" height="7"/>
+              <rect class="kp-room kp-part" data-room="people" x="0" y="11" width="9" height="5"/>
+              <rect class="kp-room kp-full" data-room="accounts" x="0" y="6" width="9" height="5"/>
+              <rect class="kp-room kp-part" data-room="insight" x="9" y="9" width="9" height="7"/>
+              <path class="kp-walls-u" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+              <path class="kp-walls" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+            </svg>
+          </header>
+          <p class="role__line">Invoices, receipts and GST, already tied to the milestone they belong to.</p>
+          <p class="sr-only">Where this role works. Contracts &amp; fees: works here; People &amp; payroll: own records, or by switch; Accounts &amp; GST: works here; Dashboards &amp; reports: own records, or by switch.</p>
+          <ul class="role__list">
+            <li data-claim="R-A1" data-status="live"><span>Raises each invoice against its milestone; GST follows the place of supply.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-A2" data-status="live"><span>Books receipts; the milestone allocation fills in from the invoice.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-A3" data-status="live"><span>Records purchase bills with input tax credit and reverse charge, and journals.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-A4" data-status="live"><span>Settles approved expense claims and advances.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-A5" data-status="live"><span>Reads receivables by age, and the profit and loss by project or service line.</span><span class="tag tag--live">Live</span></li>
+          </ul>
+        </article>
+        <article class="role" id="role-hr" data-role="hr" data-rooms="{&quot;projects&quot;:&quot;none&quot;,&quot;contracts&quot;:&quot;none&quot;,&quot;time&quot;:&quot;full&quot;,&quot;people&quot;:&quot;full&quot;,&quot;accounts&quot;:&quot;none&quot;,&quot;insight&quot;:&quot;part&quot;}">
+          <header class="role__head">
+            <span class="bubble" aria-hidden="true">HR</span>
+            <h3 class="role__name">HR</h3>
+            <svg class="keyplan keyplan--mini" viewBox="-1 -1 28 18" aria-hidden="true" focusable="false">
+              <rect class="kp-room kp-none" data-room="projects" x="9" y="0" width="17" height="9"/>
+              <rect class="kp-room kp-none" data-room="contracts" x="0" y="0" width="9" height="6"/>
+              <rect class="kp-room kp-full" data-room="time" x="18" y="9" width="8" height="7"/>
+              <rect class="kp-room kp-full" data-room="people" x="0" y="11" width="9" height="5"/>
+              <rect class="kp-room kp-none" data-room="accounts" x="0" y="6" width="9" height="5"/>
+              <rect class="kp-room kp-part" data-room="insight" x="9" y="9" width="9" height="7"/>
+              <path class="kp-walls-u" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+              <path class="kp-walls" d="M0,0H26V16H14.5M12.5,16H0V0M9,0V2.5M9,4.5V7M9,8.6V12.5M9,14.5V16M0,6H9M0,11H9M9,9H12M14,9H26M18,9V12M18,14V16"/>
+            </svg>
+          </header>
+          <p class="role__line">People, attendance, leave and pay, on one set of records.</p>
+          <p class="sr-only">Where this role works. Time &amp; attendance: works here; People &amp; payroll: works here; Dashboards &amp; reports: own records, or by switch.</p>
+          <ul class="role__list">
+            <li data-claim="R-H1" data-status="live"><span>Keeps the employee record: reporting lines, approvers, shift, holiday list and hourly cost.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-H2" data-status="live"><span>Sets the shift and attendance rules; corrects attendance with a trail.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-H3" data-status="live"><span>Sets leave types and policies; allocates leave to many people at once.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-H4" data-status="live"><span>Runs payroll in Inspera, or sends the month&rsquo;s attendance summary to whoever does.</span><span class="tag tag--live">Live</span></li>
+            <li data-claim="R-H5" data-status="live"><span>Runs hiring from requisition to offer.</span><span class="tag tag--live">Live</span></li>
+          </ul>
+        </article>
+        <!-- /claims:roles.articles -->
+      </div>
+    </div>
+    <aside class="anotes" aria-labelledby="anotes-h">
+      <h3 id="anotes-h" class="kicker">Access, in six notes</h3>
+      <ol class="anotes__l">
+        <!-- claims:roles.notes -->
+        <li data-claim="R-01" data-status="live"><span>The sidebar lists only what a person&rsquo;s role allows.</span><span class="tag tag--live">Live</span></li>
+        <li data-claim="R-02" data-status="live"><span>Most staff work only in the App. The Desk, where finance, HR and administration happen, never appears for them.</span><span class="tag tag--live">Live</span></li>
+        <li data-claim="R-03" data-status="live"><span>A project&rsquo;s Finances tab is switched on person by person, project by project.</span><span class="tag tag--live">Live</span></li>
+        <li data-claim="R-05" data-status="live"><span>Anyone with reportees gets the Team views and the team&rsquo;s pending requests; no separate role is needed.</span><span class="tag tag--live">Live</span></li>
+        <li data-claim="R-06" data-status="live"><span>Role profiles by designation: change a profile and everyone on it follows.</span><span class="tag tag--live">Live</span></li>
+        <!-- /claims:roles.notes -->
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<!-- ═════════════════════════ 10 · SEQUENCE OF WORKS ═════════════════════════ -->
+<section class="setup" id="setup" data-theme="paper" data-sheet="Sheet 10" data-title="Sequence of works" aria-labelledby="setup-h">
+  <svg class="route" aria-hidden="true" focusable="false"></svg>
+  <div class="wrap">
+    <p class="kicker" data-reveal><span class="kicker__no">Sheet 10</span>Sequence of works</p>
+    <h2 id="setup-h" class="display" data-split>We set it up with your team.</h2>
+    <p class="setup__intro" data-reveal>Back to ink. Inspera does not arrive as a login and a manual. We configure it around the way your studio already works, bring your records in, and stay on.</p>
+    <div class="stair" data-anchor="stair">
+      <svg class="gline gline--stair" viewBox="0 0 1000 300" preserveAspectRatio="none" data-in="0,270" data-out="1000,22" aria-hidden="true" focusable="false"><path class="gl" vector-effect="non-scaling-stroke" d="M0,270 L24,270 Q30,270 30,264 L30,214 Q30,208 36,208 L259,208 Q265,208 265,202 L265,152 Q265,146 271,146 L494,146 Q500,146 500,140 L500,90 Q500,84 506,84 L729,84 Q735,84 735,78 L735,28 Q735,22 741,22 L964,22 Q970,22 976,22 L1000,22"/></svg>
+      <ol class="steps">
+        <!-- claims:setup.steps -->
+        <li class="step" data-claim="I-S1" data-kind="service">
+          <span class="step__n" aria-hidden="true">01</span>
+          <h3 class="step__t">Survey</h3>
+          <p class="step__d">We sit with your team and map how the studio runs: its stages, fee structures, approvals and leave rules.</p>
+        </li>
+        <li class="step" data-claim="I-S2" data-kind="service">
+          <span class="step__n" aria-hidden="true">02</span>
+          <h3 class="step__t">Set out</h3>
+          <p class="step__d">We configure Inspera to match: contract templates by type of job, milestone lists, service categories, roles by designation, shifts, holiday lists and leave policies.</p>
+        </li>
+        <li class="step" data-claim="I-S3" data-kind="service">
+          <span class="step__n" aria-hidden="true">03</span>
+          <h3 class="step__t">Move in</h3>
+          <p class="step__d">We bring your records in: people, running contracts with their milestones, and the invoices raised before Inspera.</p>
+        </li>
+        <li class="step" data-claim="I-S4" data-kind="service">
+          <span class="step__n" aria-hidden="true">04</span>
+          <h3 class="step__t">Hand over</h3>
+          <p class="step__d">Your team runs the studio on it. Ours stays on for support.</p>
+        </li>
+        <!-- /claims:setup.steps -->
+      </ol>
+    </div>
+    <div class="gnotes" data-anchor="gnotes">
+      <h3 class="kicker">General notes</h3>
+      <ol>
+        <!-- claims:setup.notes -->
+        <li data-claim="I-01" data-status="live" data-kind="fact"><span class="gnotes__n" aria-hidden="true">1</span><span>Managed SaaS. Inspera runs in the browser; there is nothing to install or maintain.</span></li>
+        <li data-claim="I-02" data-status="live" data-kind="fact"><span class="gnotes__n" aria-hidden="true">2</span><span>Hosted on AWS servers in Mumbai, India.</span></li>
+        <li data-claim="I-07" data-status="live" data-kind="fact"><span class="gnotes__n" aria-hidden="true">3</span><span>Built on ERPNext, the open-source ERP. In the Desk, the books, GST and payroll run on ERPNext and its companion apps; contracts, milestones, the planner and the App are Inspera&rsquo;s own.</span></li>
+        <li data-claim="I-03" data-status="live" data-kind="fact"><span class="gnotes__n" aria-hidden="true">4</span><span>Your data stays yours. Lists and reports export to Excel or CSV.</span></li>
+        <li data-claim="I-04" data-status="live" data-kind="fact"><span class="gnotes__n" aria-hidden="true">5</span><span>Your studio gets its own address, in the form yourstudio.inspera.live.</span></li>
+        <li data-claim="I-05" data-status="live" data-kind="feature"><span class="gnotes__n" aria-hidden="true">6</span><span>In the Desk, every record keeps its history: who changed which field, from what to what, and when.</span><span class="tag tag--live">Live</span></li>
+        <li data-claim="I-06" data-status="live" data-kind="feature"><span class="gnotes__n" aria-hidden="true">7</span><span>Bulk import for the move: people, contracts with their milestones, tasks and attendance come in from a sheet, with a preview and an error log.</span><span class="tag tag--live">Live</span></li>
+        <!-- /claims:setup.notes -->
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ 11 · HANDOVER ═════════════════════════ -->
+<section class="close" id="walkthrough" data-theme="purple" data-sheet="Sheet 11" data-title="Handover" aria-labelledby="close-h">
+  <svg class="route" aria-hidden="true" focusable="false"></svg>
+  <div class="wrap close__wrap">
+    <div class="close__mark" aria-hidden="true">
+      <svg class="close__logo" viewBox="13 2.25 400.038 123.269" focusable="false">
+        <path class="cl-in" d="M 23.5,34.75 L 23.5,80.25 A 10.5 10.5 0 0 0 44.5,80.25 L 44.5,55.75 A 21 21 0 0 1 86.5,55.75 L 86.5,90.75"/>
+        <circle class="cl-dot" cx="23.5" cy="12.75" r="8.5"/>
+        <g class="cl-word"><path transform="translate(93.954 93.813) scale(0.12916 -0.12916)" d="M193 -15Q144 -15 105.0 -3.5Q66 8 33 25L34 144H44L78 84Q100 44 126.5 24.5Q153 5 194 5Q242 5 271.5 26.5Q301 48 301 84Q301 117 280.0 138.0Q259 159 202 176L160 189Q99 207 64.0 245.0Q29 283 29 338Q29 404 81.0 450.0Q133 496 230 496Q269 496 303.5 487.5Q338 479 370 462L364 354H354L319 416Q300 449 281.5 462.5Q263 476 226 476Q192 476 162.0 457.0Q132 438 132 403Q132 369 157.5 349.0Q183 329 233 312L278 299Q350 277 381.0 238.5Q412 200 412 146Q412 73 354.5 29.0Q297 -15 193 -15Z M446 -230V-220L458 -216Q495 -206 495 -168V376Q495 398 487.5 409.0Q480 420 460 424L446 427V437L616 495L626 485L635 454Q668 474 708.5 485.0Q749 496 792 496Q878 496 928.5 430.5Q979 365 979 243Q979 123 923.5 54.0Q868 -15 767 -15Q688 -15 634 8V-165Q634 -205 670 -215L689 -220V-230ZM719 14Q769 14 798.5 66.0Q828 118 828 239Q828 360 800.0 408.5Q772 457 719 457Q682 457 637 433V30Q675 14 719 14Z M1281 496Q1346 496 1392.0 469.5Q1438 443 1462.5 397.5Q1487 352 1487 294Q1487 283 1486.0 271.5Q1485 260 1482 251H1184Q1185 143 1222.5 95.5Q1260 48 1334 48Q1384 48 1415.0 64.0Q1446 80 1473 111L1483 102Q1452 47 1400.5 16.0Q1349 -15 1277 -15Q1206 -15 1151.0 15.5Q1096 46 1065.0 103.0Q1034 160 1034 239Q1034 321 1070.0 378.5Q1106 436 1162.5 466.0Q1219 496 1281 496ZM1278 476Q1249 476 1228.5 458.5Q1208 441 1196.5 396.5Q1185 352 1184 271H1355Q1365 380 1347.0 428.0Q1329 476 1278 476Z M1537 0V10L1552 14Q1572 20 1579.5 32.0Q1587 44 1587 63V376Q1587 398 1579.5 408.5Q1572 419 1552 423L1537 427V437L1709 495L1719 485L1728 399V391Q1742 419 1764.5 442.5Q1787 466 1814.5 481.0Q1842 496 1869 496Q1907 496 1927.0 475.0Q1947 454 1947 422Q1947 388 1927.5 369.5Q1908 351 1881 351Q1839 351 1807 393L1805 395Q1795 409 1782.0 410.5Q1769 412 1758 398Q1748 389 1741.5 376.5Q1735 364 1729 348V69Q1729 29 1764 19L1796 10V0Z M2103 -15Q2045 -15 2005.5 18.0Q1966 51 1966 113Q1966 160 2014.0 199.5Q2062 239 2165 259Q2181 262 2201.0 265.5Q2221 269 2243 273V352Q2243 420 2226.5 447.5Q2210 475 2175 475Q2151 475 2137.0 459.5Q2123 444 2119 406L2117 395Q2115 352 2096.0 332.0Q2077 312 2049 312Q2023 312 2006.0 328.0Q1989 344 1989 371Q1989 412 2017.5 440.0Q2046 468 2093.0 482.0Q2140 496 2195 496Q2284 496 2332.5 452.5Q2381 409 2381 311V90Q2381 45 2423 45H2445L2454 37Q2435 13 2412.5 0.0Q2390 -13 2349 -13Q2305 -13 2279.5 7.5Q2254 28 2246 62Q2216 30 2184.5 7.5Q2153 -15 2103 -15ZM2164 46Q2184 46 2201.5 55.5Q2219 65 2243 85V253Q2233 251 2223.0 249.0Q2213 247 2200 245Q2154 233 2126.5 204.5Q2099 176 2099 128Q2099 87 2118.0 66.5Q2137 46 2164 46Z"/></g>
+      </svg>
+    </div>
+    <h2 id="close-h" class="display close__h" data-split>Walk through it with us.</h2>
+    <p class="close__sub" data-reveal>Leave your work email. We will show you Inspera on a project like yours, and answer what this page could not.</p>
+
+    <form class="form" id="walkForm" action="https://formspree.io/f/xqedyqzl" method="POST" data-reveal>
+      <div class="field">
+        <label for="f-email">Work email</label>
+        <input id="f-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@yourstudio.in" required>
+      </div>
+      <div class="field">
+        <label for="f-studio">Studio <span>optional</span></label>
+        <input id="f-studio" type="text" name="studio" autocomplete="organization" placeholder="Name of your practice" maxlength="120">
+      </div>
+      <input type="hidden" name="_subject" value="New Demo Request from Inspera Website">
+      <div class="hp" aria-hidden="true"><label for="f-gotcha">Leave this empty</label><input id="f-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn--light form__btn" type="submit" data-magnetic>Request a walkthrough</button>
+      <p class="form__msg" role="status" aria-live="polite"></p>
+    </form>
+    <div class="form__ok" id="walkOk" role="status" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg>
+      <span>Thank you. We will reach out within 24 hours.</span>
+    </div>
+    <!-- the logo with its construction: module w = the weight of the line (7 of the 100-unit box). At rest the mark is solid, the logo itself;
+         the script shows it being set out and drawn first. Geometry from ../logo/v2/build_logo.py (set_out) -->
+    <figure class="plate" aria-hidden="true">
+      <svg class="plate__svg" viewBox="0 0 110 100" focusable="false">
+        <path class="pl-grid" d="M2.5,0V100M9.5,0V100M16.5,0V100M23.5,0V100M30.5,0V100M37.5,0V100M44.5,0V100M51.5,0V100M58.5,0V100M65.5,0V100M72.5,0V100M79.5,0V100M86.5,0V100M93.5,0V100M100.5,0V100M107.5,0V100M2.5,4.5H107.5M2.5,11.5H107.5M2.5,18.5H107.5M2.5,25.5H107.5M2.5,32.5H107.5M2.5,39.5H107.5M2.5,46.5H107.5M2.5,53.5H107.5M2.5,60.5H107.5M2.5,67.5H107.5M2.5,74.5H107.5M2.5,81.5H107.5M2.5,88.5H107.5M2.5,95.5H107.5"/>
+        <line class="pl-rule" x1="-.3" y1="29" x2="110.3" y2="29"/>
+        <line class="pl-rule" x1="-.3" y1="92" x2="110.3" y2="92"/>
+        <text class="pl-t pl-lab" x="110.3" y="29" dy="-.6em" text-anchor="end">x-height</text>
+        <text class="pl-t pl-lab" x="110.3" y="92" dy="1.3em" text-anchor="end">baseline</text>
+        <circle class="pl-circ" cx="34" cy="78" r="10.5"/>
+        <circle class="pl-circ" cx="65.5" cy="53.5" r="21"/>
+        <circle class="pl-circ pl-circ--dot" cx="23.5" cy="15" r="7"/>
+        <path class="pl-weight" d="M 23.5,32.5 L 23.5,78 A 10.5 10.5 0 0 0 44.5,78 L 44.5,53.5 A 21 21 0 0 1 86.5,53.5 L 86.5,88.5"/>
+        <circle class="pl-dotfill" cx="23.5" cy="15" r="7"/>
+        <path class="pl-line" d="M 23.5,32.5 L 23.5,78 A 10.5 10.5 0 0 0 44.5,78 L 44.5,53.5 A 21 21 0 0 1 86.5,53.5 L 86.5,88.5"/>
+        <path class="pl-ctr" d="M32.6,78H35.4M34,76.6V79.4"/>
+        <path class="pl-ctr" d="M64.1,53.5H66.9M65.5,52.1V54.9"/>
+        <path class="pl-ctr pl-ctr--dot" d="M22.1,15H24.9M23.5,13.6V16.4"/>
+        <g class="pl-dim"><path d="M65.5,53.5L80.35,38.65"/><text class="pl-t" x="60.6" y="55.2" dy="1.25em">r 3w</text></g>
+        <g class="pl-dim"><path d="M34,78L26.58,85.42L14.4,89.9"/><text class="pl-t" x="13.4" y="89.9" dy=".35em" text-anchor="end">r 1.5w</text></g>
+        <g class="pl-dim"><path d="M23.5,98.5H44.5M23.5,96.9V100.1M44.5,96.9V100.1"/><text class="pl-t" x="34" y="100.1" dy="1.2em" text-anchor="middle">3w</text></g>
+        <g class="pl-dim"><path d="M44.5,98.5H86.5M44.5,96.9V100.1M86.5,96.9V100.1"/><text class="pl-t" x="65.5" y="100.1" dy="1.2em" text-anchor="middle">6w</text></g>
+        <g class="pl-dim"><path d="M101.9,32.5V88.5M100.3,32.5H103.5M100.3,88.5H103.5"/><text class="pl-t" x="104.1" y="60.5" dy=".35em">8w</text></g>
+        <g class="pl-dim"><path d="M77,72.5H83M81.6,71.7L83,72.5L81.6,73.3M96,72.5H90M91.4,71.7L90,72.5L91.4,73.3"/><text class="pl-t" x="97.4" y="72.5" dy=".35em">w</text></g>
+        <g class="pl-dim"><path d="M8.1,8V22M6.5,8H9.7M6.5,22H9.7"/><text class="pl-t" x="5.9" y="15" dy=".35em" text-anchor="end">2w</text></g>
+        <g class="pl-dim"><path d="M8.1,22V29M6.5,29H9.7"/><text class="pl-t" x="5.9" y="25.5" dy=".35em" text-anchor="end">w</text></g>
+      </svg>
+      <figcaption class="plate__cap">The mark, set out &middot; module <i>w</i> = the weight of its line</figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" data-theme="ink">
+  <div class="wrap foot__in">
+    <a class="foot__brand" href="#top" aria-label="Inspera, back to the top"><svg class="foot__logo" viewBox="13 2.25 400.038 123.269" aria-hidden="true" focusable="false"><use href="#lgi"/><use href="#lgw"/></svg></a>
+    <p class="foot__p">Inspera is an SMB Catalyst product, made in India for architecture and interior-design studios.</p>
+    <p class="foot__p foot__status">Feature status on this page is as of 21 November 2026. Solid is live. Dashed is in development.</p>
+    <p class="foot__p foot__status foot__tm">ERPNext is a trademark of Frappe Technologies Pvt. Ltd. Inspera is an independent product, not affiliated with or endorsed by Frappe.</p>
+    <p class="foot__p foot__c">&copy; 2026 Inspera. All rights reserved.</p>
+  </div>
+</footer>
+
+<noscript><p class="nojs">This page draws itself as you scroll, which needs JavaScript. Everything is readable without it.</p></noscript>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+<script defer src="assets/site.js"></script>
+</body>
+</html>

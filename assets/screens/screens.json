@@ -1,0 +1,178 @@
+{
+ "a01-overview": {
+  "file": "assets/screens/a01-overview.webp",
+  "width": 1600,
+  "height": 900,
+  "bytes": 60262,
+  "large": "assets/screens/a01-overview-large.webp",
+  "large_width": 2880,
+  "large_height": 1620,
+  "large_bytes": 118234,
+  "ar": 1.7778
+ },
+ "a01-contract": {
+  "file": "assets/screens/a01-contract.webp",
+  "width": 1200,
+  "height": 1156,
+  "bytes": 39920,
+  "large": "assets/screens/a01-contract-large.webp",
+  "large_width": 2200,
+  "large_height": 2120,
+  "large_bytes": 80068,
+  "ar": 1.0381
+ },
+ "a02-planner": {
+  "file": "assets/screens/a02-planner.webp",
+  "width": 1600,
+  "height": 900,
+  "bytes": 48138,
+  "large": "assets/screens/a02-planner-large.webp",
+  "large_width": 2880,
+  "large_height": 1620,
+  "large_bytes": 92212,
+  "ar": 1.7778
+ },
+ "a02-tasks": {
+  "file": "assets/screens/a02-tasks.webp",
+  "width": 1400,
+  "height": 787,
+  "bytes": 40832,
+  "large": "assets/screens/a02-tasks-large.webp",
+  "large_width": 2792,
+  "large_height": 1570,
+  "large_bytes": 89294,
+  "ar": 1.7789
+ },
+ "a03-timesheet": {
+  "file": "assets/screens/a03-timesheet.webp",
+  "width": 1600,
+  "height": 900,
+  "bytes": 42686,
+  "large": "assets/screens/a03-timesheet-large.webp",
+  "large_width": 2880,
+  "large_height": 1620,
+  "large_bytes": 80576,
+  "ar": 1.7778
+ },
+ "a03-attendance": {
+  "file": "assets/screens/a03-attendance.webp",
+  "width": 1400,
+  "height": 875,
+  "bytes": 47014,
+  "large": "assets/screens/a03-attendance-large.webp",
+  "large_width": 2880,
+  "large_height": 1800,
+  "large_bytes": 107160,
+  "ar": 1.6
+ },
+ "a04-expenses": {
+  "file": "assets/screens/a04-expenses.webp",
+  "width": 1600,
+  "height": 978,
+  "bytes": 48740,
+  "large": "assets/screens/a04-expenses-large.webp",
+  "large_width": 2880,
+  "large_height": 1760,
+  "large_bytes": 92286,
+  "ar": 1.636
+ },
+ "a04-phone-duty": {
+  "file": "assets/screens/a04-phone-duty.webp",
+  "width": 520,
+  "height": 1158,
+  "bytes": 18740,
+  "large": "assets/screens/a04-phone-duty-large.webp",
+  "large_width": 1080,
+  "large_height": 2404,
+  "large_bytes": 41780,
+  "ar": 0.4491
+ },
+ "a04-phone-claim": {
+  "file": "assets/screens/a04-phone-claim.webp",
+  "width": 520,
+  "height": 1158,
+  "bytes": 17918,
+  "large": "assets/screens/a04-phone-claim-large.webp",
+  "large_width": 1080,
+  "large_height": 2404,
+  "large_bytes": 40202,
+  "ar": 0.4491
+ },
+ "a04-phone-timesheet": {
+  "file": "assets/screens/a04-phone-timesheet.webp",
+  "width": 520,
+  "height": 1158,
+  "bytes": 27016,
+  "large": "assets/screens/a04-phone-timesheet-large.webp",
+  "large_width": 1080,
+  "large_height": 2404,
+  "large_bytes": 58298,
+  "ar": 0.4491
+ },
+ "a05-finances": {
+  "file": "assets/screens/a05-finances.webp",
+  "width": 1600,
+  "height": 900,
+  "bytes": 62684,
+  "large": "assets/screens/a05-finances-large.webp",
+  "large_width": 2880,
+  "large_height": 1620,
+  "large_bytes": 124188,
+  "ar": 1.7778
+ },
+ "a05-invoice": {
+  "file": "assets/screens/a05-invoice.webp",
+  "width": 1200,
+  "height": 1632,
+  "bytes": 59534,
+  "large": "assets/screens/a05-invoice-large.webp",
+  "large_width": 2200,
+  "large_height": 2992,
+  "large_bytes": 117490,
+  "ar": 0.7353
+ },
+ "a06-hiring": {
+  "file": "assets/screens/a06-hiring.webp",
+  "width": 1600,
+  "height": 967,
+  "bytes": 40108,
+  "large": "assets/screens/a06-hiring-large.webp",
+  "large_width": 2880,
+  "large_height": 1740,
+  "large_bytes": 76704,
+  "ar": 1.6546
+ },
+ "a06-leave": {
+  "file": "assets/screens/a06-leave.webp",
+  "width": 1400,
+  "height": 875,
+  "bytes": 37224,
+  "large": "assets/screens/a06-leave-large.webp",
+  "large_width": 2880,
+  "large_height": 1800,
+  "large_bytes": 85496,
+  "ar": 1.6
+ },
+ "a07-finance": {
+  "file": "assets/screens/a07-finance.webp",
+  "width": 1600,
+  "height": 900,
+  "bytes": 53794,
+  "large": "assets/screens/a07-finance-large.webp",
+  "large_width": 2880,
+  "large_height": 1620,
+  "large_bytes": 104158,
+  "ar": 1.7778
+ },
+ "a07-reports": {
+  "file": "assets/screens/a07-reports.webp",
+  "width": 1400,
+  "height": 788,
+  "bytes": 35436,
+  "large": "assets/screens/a07-reports-large.webp",
+  "large_width": 2880,
+  "large_height": 1620,
+  "large_bytes": 79190,
+  "ar": 1.7766
+ }
+}
